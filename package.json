@@ -1,6 +1,7 @@
 {
   "name": "proverb-for-the-day",
   "version": "0.1.0",
+  "packageManager": "pnpm@10.15.0",
   "bin": {
     "proverb-for-the-day": "bin/proverb-for-the-day.js"
   },
@@ -8,14 +9,21 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "dep": "cdk deploy --profile AdministratorAccess-640223110844",
+    "invoke:load": "aws lambda invoke --function-name load-proverbs temp/output.json --payload file://test/src/load-proverbs/test-data/kjv.json --cli-binary-format raw-in-base64-out --profile AdministratorAccess-640223110844 --output=json"
   },
   "devDependencies": {
+    "@aws-sdk/client-dynamodb": "3.879.0",
+    "@aws-sdk/lib-dynamodb": "3.879.0",
+    "@types/aws-lambda": "8.10.152",
     "@types/jest": "^29.5.14",
     "@types/node": "22.7.9",
+    "aws-cdk": "2.1027.0",
+    "aws-lambda": "1.0.7",
+    "aws-sdk-client-mock": "4.1.0",
     "jest": "^29.7.0",
     "ts-jest": "^29.2.5",
-    "aws-cdk": "2.1027.0",
     "ts-node": "^10.9.2",
     "typescript": "~5.6.3"
   },

@@ -1,0 +1,1505 @@
+{
+  "version": "kjv",
+  "proverbs": [
+    {
+      "ref": "Proverbs 10:1",
+      "proverb": "A wise son maketh a glad father: but a foolish son is the heaviness of his mother."
+    },
+    {
+      "ref": "Proverbs 10:2",
+      "proverb": "Treasures of wickedness profit nothing: but righteousness delivereth from death."
+    },
+    {
+      "ref": "Proverbs 10:3",
+      "proverb": "The LORD will not suffer the soul of the righteous to famish: but he casteth away the substance of the wicked."
+    },
+    {
+      "ref": "Proverbs 10:4",
+      "proverb": "He becometh poor that dealeth with a slack hand: but the hand of the diligent maketh rich."
+    },
+    {
+      "ref": "Proverbs 10:5",
+      "proverb": "He that gathereth in summer is a wise son: but he that sleepeth in harvest is a son that causeth shame."
+    },
+    {
+      "ref": "Proverbs 10:6",
+      "proverb": "Blessings are upon the head of the just: but violence covereth the mouth of the wicked."
+    },
+    {
+      "ref": "Proverbs 10:7",
+      "proverb": "The memory of the just is blessed: but the name of the wicked shall rot."
+    },
+    {
+      "ref": "Proverbs 10:8",
+      "proverb": "The wise in heart will receive commandments: but a prating fool shall fall."
+    },
+    {
+      "ref": "Proverbs 10:9",
+      "proverb": "He that walketh uprightly walketh surely: but he that perverteth his ways shall be known."
+    },
+    {
+      "ref": "Proverbs 10:10",
+      "proverb": "He that winketh with the eye causeth sorrow: but a prating fool shall fall."
+    },
+    {
+      "ref": "Proverbs 10:11",
+      "proverb": "The mouth of a righteous man is a well of life: but violence covereth the mouth of the wicked."
+    },
+    {
+      "ref": "Proverbs 10:12",
+      "proverb": "Hatred stirreth up strifes: but love covereth all sins."
+    },
+    {
+      "ref": "Proverbs 10:13",
+      "proverb": "In the lips of him that hath understanding wisdom is found: but a rod is for the back of him that is void of understanding."
+    },
+    {
+      "ref": "Proverbs 10:14",
+      "proverb": "Wise men lay up knowledge: but the mouth of the foolish is near destruction."
+    },
+    {
+      "ref": "Proverbs 10:15",
+      "proverb": "The rich man’s wealth is his strong city: the destruction of the poor is their poverty."
+    },
+    {
+      "ref": "Proverbs 10:16",
+      "proverb": "The labour of the righteous tendeth to life: tshe fruit of the wicked to sin."
+    },
+    {
+      "ref": "Proverbs 10:17",
+      "proverb": "He is in the way of life that keepeth instruction: but he that refuseth reproof erreth."
+    },
+    {
+      "ref": "Proverbs 10:18",
+      "proverb": "He that hideth hatred with lying lips, and he that uttereth a slander, is a fool."
+    },
+    {
+      "ref": "Proverbs 10:19",
+      "proverb": "In the multitude of words there wanteth not sin: but he that refraineth his lips is wise."
+    },
+    {
+      "ref": "Proverbs 10:20",
+      "proverb": "The tongue of the just is as choice silver: the heart of the wicked is little worth."
+    },
+    {
+      "ref": "Proverbs 10:21",
+      "proverb": "The lips of the righteous feed many: but fools die for want of wisdom."
+    },
+    {
+      "ref": "Proverbs 10:22",
+      "proverb": "The blessing of the LORD, it maketh rich, and he addeth no sorrow with it."
+    },
+    {
+      "ref": "Proverbs 10:23",
+      "proverb": "It is as sport to a fool to do mischief: but a man of understanding hath wisdom."
+    },
+    {
+      "ref": "Proverbs 10:24",
+      "proverb": "The fear of the wicked, it shall come upon him: but the desire of the righteous shall be granted."
+    },
+    {
+      "ref": "Proverbs 10:25",
+      "proverb": "As the whirlwind passeth, so is the wicked no more: but the righteous is an everlasting foundation."
+    },
+    {
+      "ref": "Proverbs 10:26",
+      "proverb": "As vinegar to the teeth, and as smoke to the eyes, so is the sluggard to them that send him."
+    },
+    {
+      "ref": "Proverbs 10:27",
+      "proverb": "The fear of the LORD prolongeth days: but the years of the wicked shall be shortened."
+    },
+    {
+      "ref": "Proverbs 10:28",
+      "proverb": "The hope of the righteous shall be gladness: but the expectation of the wicked shall perish."
+    },
+    {
+      "ref": "Proverbs 10:29",
+      "proverb": "The way of the LORD is strength to the upright: but destruction shall be to the workers of iniquity."
+    },
+    {
+      "ref": "Proverbs 10:30",
+      "proverb": "The righteous shall never be removed: but the wicked shall not inhabit the earth."
+    },
+    {
+      "ref": "Proverbs 10:31",
+      "proverb": "The mouth of the just bringeth forth wisdom: but the froward tongue shall be cut out."
+    },
+    {
+      "ref": "Proverbs 10:32",
+      "proverb": "The lips of the righteous know what is acceptable: but the mouth of the wicked speaketh frowardness."
+    },
+    {
+      "ref": "Proverbs 11:1",
+      "proverb": "A false balance is abomination to the LORD: but a just weight is his delight."
+    },
+    {
+      "ref": "Proverbs 11:2",
+      "proverb": "When pride cometh, then cometh shame: but with the lowly is wisdom."
+    },
+    {
+      "ref": "Proverbs 11:3",
+      "proverb": "The integrity of the upright shall guide them: but the perverseness of transgressors shall destroy them."
+    },
+    {
+      "ref": "Proverbs 11:4",
+      "proverb": "Riches profit not in the day of wrath: but righteousness delivereth from death."
+    },
+    {
+      "ref": "Proverbs 11:5",
+      "proverb": "The righteousness of the perfect shall direct his way: but the wicked shall fall by his own wickedness."
+    },
+    {
+      "ref": "Proverbs 11:6",
+      "proverb": "The righteousness of the upright shall deliver them: but transgressors shall be taken in their own naughtiness."
+    },
+    {
+      "ref": "Proverbs 11:7",
+      "proverb": "When a wicked man dieth, his expectation shall perish: and the hope of unjust men perisheth."
+    },
+    {
+      "ref": "Proverbs 11:8",
+      "proverb": "The righteous is delivered out of trouble, and the wicked cometh in his stead."
+    },
+    {
+      "ref": "Proverbs 11:9",
+      "proverb": "An hypocrite with his mouth destroyeth his neighbour: but through knowledge shall the just be delivered."
+    },
+    {
+      "ref": "Proverbs 11:10",
+      "proverb": "When it goeth well with the righteous, the city rejoiceth: and when the wicked perish, there is shouting."
+    },
+    {
+      "ref": "Proverbs 11:11",
+      "proverb": "By the blessing of the upright the city is exalted: but it is overthrown by the mouth of the wicked."
+    },
+    {
+      "ref": "Proverbs 11:12",
+      "proverb": "He that is void of wisdom despiseth his neighbour: but a man of understanding holdeth his peace."
+    },
+    {
+      "ref": "Proverbs 11:13",
+      "proverb": "A talebearer revealeth secrets: but he that is of a faithful spirit concealeth the matter."
+    },
+    {
+      "ref": "Proverbs 11:14",
+      "proverb": "Where no counsel is, the people fall: but in the multitude of counsellors there is safety."
+    },
+    {
+      "ref": "Proverbs 11:15",
+      "proverb": "He that is surety for a stranger shall smart for it: and he that hateth suretyship is sure."
+    },
+    {
+      "ref": "Proverbs 11:16",
+      "proverb": "A gracious woman retaineth honour: and strong men retain riches."
+    },
+    {
+      "ref": "Proverbs 11:17",
+      "proverb": "The merciful man doeth good to his own soul: but he that is cruel troubleth his own flesh."
+    },
+    {
+      "ref": "Proverbs 11:18",
+      "proverb": "The wicked worketh a deceitful work: but to him that soweth righteousness shall be a sure reward."
+    },
+    {
+      "ref": "Proverbs 11:19",
+      "proverb": "As righteousness tendeth to life: so he that pursueth evil pursueth it to his own death."
+    },
+    {
+      "ref": "Proverbs 11:20",
+      "proverb": "They that are of a froward heart are abomination to the LORD: but such as are upright in their way are his delight."
+    },
+    {
+      "ref": "Proverbs 11:21",
+      "proverb": "Though hand join in hand, the wicked shall not be unpunished: but the seed of the righteous shall be delivered."
+    },
+    {
+      "ref": "Proverbs 11:22",
+      "proverb": "As a jewel of gold in a swine’s snout, so is a fair woman which is without discretion."
+    },
+    {
+      "ref": "Proverbs 11:23",
+      "proverb": "The desire of the righteous is only good: but the expectation of the wicked is wrath."
+    },
+    {
+      "ref": "Proverbs 11:24",
+      "proverb": "There is that scattereth, and yet increaseth; and there is that withholdeth more than is meet, but it tendeth to poverty."
+    },
+    {
+      "ref": "Proverbs 11:25",
+      "proverb": "The liberal soul shall be made fat: and he that watereth shall be watered also himself."
+    },
+    {
+      "ref": "Proverbs 11:26",
+      "proverb": "He that withholdeth corn, the people shall curse him: but blessing shall be upon the head of him that selleth it."
+    },
+    {
+      "ref": "Proverbs 11:27",
+      "proverb": "He that diligently seeketh good procureth favour: but he that seeketh mischief, it shall come unto him."
+    },
+    {
+      "ref": "Proverbs 11:28",
+      "proverb": "He that trusteth in his riches shall fall: but the righteous shall flourish as a branch."
+    },
+    {
+      "ref": "Proverbs 11:29",
+      "proverb": "He that troubleth his own house shall inherit the wind: and the fool shall be servant to the wise of heart."
+    },
+    {
+      "ref": "Proverbs 11:30",
+      "proverb": "The fruit of the righteous is a tree of life; and he that winneth souls is wise."
+    },
+    {
+      "ref": "Proverbs 11:31",
+      "proverb": "Behold, the righteous shall be rewarded in the earth: much more the wicked and the sinner."
+    },
+    {
+      "ref": "Proverbs 12:1",
+      "proverb": "Whoso loveth instruction loveth knowledge: but he that hateth reproof is brutish."
+    },
+    {
+      "ref": "Proverbs 12:2",
+      "proverb": "A good man obtaineth favour of the LORD: but a man of wicked devices will he condemn."
+    },
+    {
+      "ref": "Proverbs 12:3",
+      "proverb": "A man shall not be established by wickedness: but the root of the righteous shall not be moved."
+    },
+    {
+      "ref": "Proverbs 12:4",
+      "proverb": "A virtuous woman is a crown to her husband: but she that maketh ashamed is as rottenness in his bones."
+    },
+    {
+      "ref": "Proverbs 12:5",
+      "proverb": "The thoughts of the righteous are right: but the counsels of the wicked are deceit."
+    },
+    {
+      "ref": "Proverbs 12:6",
+      "proverb": "The words of the wicked are to lie in wait for blood: but the mouth of the upright shall deliver them."
+    },
+    {
+      "ref": "Proverbs 12:7",
+      "proverb": "The wicked are overthrown, and are not: but the house of the righteous shall stand."
+    },
+    {
+      "ref": "Proverbs 12:8",
+      "proverb": "A man shall be commended according to his wisdom: but he that is of a perverse heart shall be despised."
+    },
+    {
+      "ref": "Proverbs 12:9",
+      "proverb": "He that is despised, and hath a servant, is better than he that honoureth himself, and lacketh bread."
+    },
+    {
+      "ref": "Proverbs 12:10",
+      "proverb": "A righteous man regardeth the life of his beast: but the tender mercies of the wicked are cruel."
+    },
+    {
+      "ref": "Proverbs 12:11",
+      "proverb": "He that tilleth his land shall be satisfied with bread: but he that followeth vain persons is void of understanding."
+    },
+    {
+      "ref": "Proverbs 12:12",
+      "proverb": "The wicked desireth the net of evil men: but the root of the righteous yieldeth fruit."
+    },
+    {
+      "ref": "Proverbs 12:13",
+      "proverb": "The wicked is snared by the transgression of his lips: but the just shall come out of trouble."
+    },
+    {
+      "ref": "Proverbs 12:14",
+      "proverb": "A man shall be satisfied with good by the fruit of his mouth: and the recompence of a man’s hands shall be rendered unto him."
+    },
+    {
+      "ref": "Proverbs 12:15",
+      "proverb": "The way of a fool is right in his own eyes: but he that hearkeneth unto counsel is wise."
+    },
+    {
+      "ref": "Proverbs 12:16",
+      "proverb": "A fool’s wrath is presently known: but a prudent man covereth shame."
+    },
+    {
+      "ref": "Proverbs 12:17",
+      "proverb": "He that speaketh truth sheweth forth righteousness: but a false witness deceit."
+    },
+    {
+      "ref": "Proverbs 12:18",
+      "proverb": "There is that speaketh like the piercings of a sword: but the tongue of the wise is health."
+    },
+    {
+      "ref": "Proverbs 12:19",
+      "proverb": "The lip of truth shall be established for ever: but a lying tongue is but for a moment."
+    },
+    {
+      "ref": "Proverbs 12:20",
+      "proverb": "Deceit is in the heart of them that imagine evil: but to the counsellors of peace is joy."
+    },
+    {
+      "ref": "Proverbs 12:21",
+      "proverb": "There shall no evil happen to the just: but the wicked shall be filled with mischief."
+    },
+    {
+      "ref": "Proverbs 12:22",
+      "proverb": "Lying lips are abomination to the LORD: but they that deal truly are his delight."
+    },
+    {
+      "ref": "Proverbs 12:23",
+      "proverb": "A prudent man concealeth knowledge: but the heart of fools proclaimeth foolishness."
+    },
+    {
+      "ref": "Proverbs 12:24",
+      "proverb": "The hand of the diligent shall bear rule: but the slothful shall be under tribute."
+    },
+    {
+      "ref": "Proverbs 12:25",
+      "proverb": "Heaviness in the heart of man maketh it stoop: but a good word maketh it glad."
+    },
+    {
+      "ref": "Proverbs 12:26",
+      "proverb": "The righteous is more excellent than his neighbour: but the way of the wicked seduceth them."
+    },
+    {
+      "ref": "Proverbs 12:27",
+      "proverb": "The slothful man roasteth not that which he took in hunting: but the substance of a diligent man is precious."
+    },
+    {
+      "ref": "Proverbs 12:28",
+      "proverb": "In the way of righteousness is life: and in the pathway thereof there is no death."
+    },
+    {
+      "ref": "Proverbs 13:1",
+      "proverb": "A wise son heareth his father's instruction: but a scorner heareth not rebuke."
+    },
+    {
+      "ref": "Proverbs 13:2",
+      "proverb": "A man shall eat good by the fruit of his mouth: but the poor shall eat bitter things."
+    },
+    {
+      "ref": "Proverbs 13:3",
+      "proverb": "He that keepeth his mouth keepeth his life: but he that openeth wide his lips shall have destruction."
+    },
+    {
+      "ref": "Proverbs 13:4",
+      "proverb": "The soul of the sluggard desireth, and hath nothing: but the soul of the diligent shall be made fat."
+    },
+    {
+      "ref": "Proverbs 13:5",
+      "proverb": "A righteous man hateth lying: but a wicked man is loathsome, and cometh to shame."
+    },
+    {
+      "ref": "Proverbs 13:6",
+      "proverb": "Righteousness keepeth him that is upright in the way: but wickedness overthroweth the sinner."
+    },
+    {
+      "ref": "Proverbs 13:7",
+      "proverb": "There is that maketh himself rich, yet hath nothing: there is that maketh himself poor, yet hath great riches."
+    },
+    {
+      "ref": "Proverbs 13:8",
+      "proverb": "The ransom of a man's life are his riches: but the poor heareth not rebuke."
+    },
+    {
+      "ref": "Proverbs 13:9",
+      "proverb": "The light of the righteous rejoiceth: but the lamp of the wicked shall be put out."
+    },
+    {
+      "ref": "Proverbs 13:10",
+      "proverb": "Only by pride cometh contention: but with the well advised is wisdom."
+    },
+    {
+      "ref": "Proverbs 13:11",
+      "proverb": "Wealth gotten by vanity shall be diminished: but he that gathereth by labour shall increase."
+    },
+    {
+      "ref": "Proverbs 13:12",
+      "proverb": "Hope deferred maketh the heart sick: but when the desire cometh, it is a tree of life."
+    },
+    {
+      "ref": "Proverbs 13:13",
+      "proverb": "Whoso despiseth the word shall be destroyed: but he that feareth the commandment shall be rewarded."
+    },
+    {
+      "ref": "Proverbs 13:14",
+      "proverb": "The law of the wise is a fountain of life, to depart from the snares of death."
+    },
+    {
+      "ref": "Proverbs 13:15",
+      "proverb": "Good understanding giveth favour: but the way of the unwise is mischief."
+    },
+    {
+      "ref": "Proverbs 13:16",
+      "proverb": "Every prudent man dealeth with knowledge: but a fool layeth open his folly."
+    },
+    {
+      "ref": "Proverbs 13:17",
+      "proverb": "A wicked messenger falleth into mischief: but a faithful ambassador is health."
+    },
+    {
+      "ref": "Proverbs 13:18",
+      "proverb": "Poverty and shame shall be to him that refuseth instruction: but he that regardeth reproof shall be honoured."
+    },
+    {
+      "ref": "Proverbs 13:19",
+      "proverb": "The desire accomplished is sweet to the soul: but it is abomination to fools to depart from evil."
+    },
+    {
+      "ref": "Proverbs 13:20",
+      "proverb": "He that walketh with wise men shall be wise: but a companion of fools shall be destroyed."
+    },
+    {
+      "ref": "Proverbs 13:21",
+      "proverb": "Evil pursueth sinners: but to the righteous good shall be repaid."
+    },
+    {
+      "ref": "Proverbs 13:22",
+      "proverb": "A good man leaveth an inheritance to his children's children: and the wealth of the sinner is laid up for the just."
+    },
+    {
+      "ref": "Proverbs 13:23",
+      "proverb": "Much food is in the tillage of the poor: but there is that is destroyed for want of judgment."
+    },
+    {
+      "ref": "Proverbs 13:24",
+      "proverb": "He that spareth his rod hateth his son: but he that loveth him chasteneth him betimes."
+    },
+    {
+      "ref": "Proverbs 13:25",
+      "proverb": "The righteous eateth to the satisfying of his soul: but the belly of the wicked shall want."
+    },
+    {
+      "ref": "Proverbs 14:1",
+      "proverb": "Every wise woman buildeth her house: but the foolish plucketh it down with her hands."
+    },
+    {
+      "ref": "Proverbs 14:2",
+      "proverb": "He that walketh in his uprightness feareth the LORD: but he that is perverse in his ways despiseth him."
+    },
+    {
+      "ref": "Proverbs 14:3",
+      "proverb": "In the mouth of the foolish is a rod of pride: but the lips of the wise shall preserve them."
+    },
+    {
+      "ref": "Proverbs 14:4",
+      "proverb": "Where no oxen are, the crib is clean: but much increase is by the strength of the ox."
+    },
+    {
+      "ref": "Proverbs 14:5",
+      "proverb": "A faithful witness will not lie: but a false witness will utter lies."
+    },
+    {
+      "ref": "Proverbs 14:6",
+      "proverb": "A scorner seeketh wisdom, and findeth it not: but knowledge is easy unto him that understandeth."
+    },
+    {
+      "ref": "Proverbs 14:7",
+      "proverb": "Go from the presence of a foolish man, when thou perceivest not in him the lips of knowledge."
+    },
+    {
+      "ref": "Proverbs 14:8",
+      "proverb": "The wisdom of the prudent is to understand his way: but the folly of fools is deceit."
+    },
+    {
+      "ref": "Proverbs 14:9",
+      "proverb": "Fools make a mock at sin: but among the righteous there is favour."
+    },
+    {
+      "ref": "Proverbs 14:10",
+      "proverb": "The heart knoweth his own bitterness; and a stranger doth not intermeddle with his joy."
+    },
+    {
+      "ref": "Proverbs 14:11",
+      "proverb": "The house of the wicked shall be overthrown: but the tabernacle of the upright shall flourish."
+    },
+    {
+      "ref": "Proverbs 14:12",
+      "proverb": "There is a way which seemeth right unto a man, but the end thereof are the ways of death."
+    },
+    {
+      "ref": "Proverbs 14:13",
+      "proverb": "Even in laughter the heart is sorrowful; and the end of that mirth is heaviness."
+    },
+    {
+      "ref": "Proverbs 14:14",
+      "proverb": "The backslider in heart shall be filled with his own ways: and a good man shall be satisfied from himself."
+    },
+    {
+      "ref": "Proverbs 14:15",
+      "proverb": "The simple believeth every word: but the prudent man looketh well to his going."
+    },
+    {
+      "ref": "Proverbs 14:16",
+      "proverb": "A wise man feareth, and departeth from evil: but the fool rageth, and is confident."
+    },
+    {
+      "ref": "Proverbs 14:17",
+      "proverb": "He that is soon angry dealeth foolishly: and a man of wicked devices is hated."
+    },
+    {
+      "ref": "Proverbs 14:18",
+      "proverb": "The simple inherit folly: but the prudent are crowned with knowledge."
+    },
+    {
+      "ref": "Proverbs 14:19",
+      "proverb": "The evil bow before the good; and the wicked at the gates of the righteous."
+    },
+    {
+      "ref": "Proverbs 14:20",
+      "proverb": "The poor is hated even of his own neighbour: but the rich hath many friends."
+    },
+    {
+      "ref": "Proverbs 14:21",
+      "proverb": "He that despiseth his neighbour sinneth: but he that hath mercy on the poor, happy is he."
+    },
+    {
+      "ref": "Proverbs 14:22",
+      "proverb": "Do they not err that devise evil? but mercy and truth shall be to them that devise good."
+    },
+    {
+      "ref": "Proverbs 14:23",
+      "proverb": "In all labour there is profit: but the talk of the lips tendeth only to penury."
+    },
+    {
+      "ref": "Proverbs 14:24",
+      "proverb": "The crown of the wise is their riches: but the foolishness of fools is folly."
+    },
+    {
+      "ref": "Proverbs 14:25",
+      "proverb": "A true witness delivereth souls: but a deceitful witness speaketh lies."
+    },
+    {
+      "ref": "Proverbs 14:26",
+      "proverb": "In the fear of the LORD is strong confidence: and his children shall have a place of refuge."
+    },
+    {
+      "ref": "Proverbs 14:27",
+      "proverb": "The fear of the LORD is a fountain of life, to depart from the snares of death."
+    },
+    {
+      "ref": "Proverbs 14:28",
+      "proverb": "In a multitude of people is the king's honour: but in the want of people is the destruction of the prince."
+    },
+    {
+      "ref": "Proverbs 14:29",
+      "proverb": "He that is slow to wrath is of great understanding: but he that is hasty of spirit exalteth folly."
+    },
+    {
+      "ref": "Proverbs 14:30",
+      "proverb": "A sound heart is the life of the flesh: but envy the rottenness of the bones."
+    },
+    {
+      "ref": "Proverbs 14:31",
+      "proverb": "He that oppresseth the poor reproacheth his Maker: but he that honoureth him hath mercy on the poor."
+    },
+    {
+      "ref": "Proverbs 14:32",
+      "proverb": "The wicked is driven away in his wickedness: but the righteous hath hope in his death."
+    },
+    {
+      "ref": "Proverbs 14:33",
+      "proverb": "Wisdom resteth in the heart of him that hath understanding: but that which is in the midst of fools is made known."
+    },
+    {
+      "ref": "Proverbs 14:34",
+      "proverb": "Righteousness exalteth a nation: but sin is a reproach to any people."
+    },
+    {
+      "ref": "Proverbs 14:35",
+      "proverb": "The king's favour is toward a wise servant: but his wrath is against him that causeth shame."
+    },
+    {
+      "ref": "Proverbs 15:1",
+      "proverb": "A soft answer turneth away wrath: but grievous words stir up anger."
+    },
+    {
+      "ref": "Proverbs 15:2",
+      "proverb": "The tongue of the wise uses knowledge aright: but the mouth of fools poureth out foolishness."
+    },
+    {
+      "ref": "Proverbs 15:3",
+      "proverb": "The eyes of the LORD are in every place, beholding the evil and the good."
+    },
+    {
+      "ref": "Proverbs 15:4",
+      "proverb": "A wholesome tongue is a tree of life: but perverseness therein is a breach in the spirit."
+    },
+    {
+      "ref": "Proverbs 15:5",
+      "proverb": "A fool despiseth his father's instruction: but he that regardeth reproof is prudent."
+    },
+    {
+      "ref": "Proverbs 15:6",
+      "proverb": "In the house of the righteous is much treasure: but in the revenues of the wicked is trouble."
+    },
+    {
+      "ref": "Proverbs 15:7",
+      "proverb": "The lips of the wise disperse knowledge: but the heart of the foolish doeth not so."
+    },
+    {
+      "ref": "Proverbs 15:8",
+      "proverb": "The sacrifice of the wicked is an abomination to the LORD: but the prayer of the upright is his delight."
+    },
+    {
+      "ref": "Proverbs 15:9",
+      "proverb": "The way of the wicked is an abomination unto the LORD: but he loveth him that followeth after righteousness."
+    },
+    {
+      "ref": "Proverbs 15:10",
+      "proverb": "Correction is grievous unto him that forsaketh the way: and he that hateth reproof shall die."
+    },
+    {
+      "ref": "Proverbs 15:11",
+      "proverb": "Hell and destruction are before the LORD: how much more then the hearts of the children of men?"
+    },
+    {
+      "ref": "Proverbs 15:12",
+      "proverb": "A scorner loveth not one that reproveth him: neither will he go unto the wise."
+    },
+    {
+      "ref": "Proverbs 15:13",
+      "proverb": "A merry heart maketh a cheerful countenance: but by sorrow of the heart the spirit is broken."
+    },
+    {
+      "ref": "Proverbs 15:14",
+      "proverb": "The heart of him that hath understanding seeketh knowledge: but the mouth of fools feedeth on foolishness."
+    },
+    {
+      "ref": "Proverbs 15:15",
+      "proverb": "All the days of the afflicted are evil: but he that is of a merry heart hath a continual feast."
+    },
+    {
+      "ref": "Proverbs 15:16",
+      "proverb": "Better is little with the fear of the LORD than great treasure and trouble therewith."
+    },
+    {
+      "ref": "Proverbs 15:17",
+      "proverb": "Better is a dinner of herbs where love is, than a stalled ox and hatred therewith."
+    },
+    {
+      "ref": "Proverbs 15:18",
+      "proverb": "A wrathful man stirreth up strife: but he that is slow to anger appeaseth strife."
+    },
+    {
+      "ref": "Proverbs 15:19",
+      "proverb": "The way of the slothful man is as an hedge of thorns: but the way of the righteous is made plain."
+    },
+    {
+      "ref": "Proverbs 15:20",
+      "proverb": "A wise son maketh a glad father: but a foolish man despiseth his mother."
+    },
+    {
+      "ref": "Proverbs 15:21",
+      "proverb": "Folly is joy to him that is destitute of wisdom: but a man of understanding walketh uprightly."
+    },
+    {
+      "ref": "Proverbs 15:22",
+      "proverb": "Without counsel purposes are disappointed: but in the multitude of counsellors they are established."
+    },
+    {
+      "ref": "Proverbs 15:23",
+      "proverb": "A man hath joy by the answer of his mouth: and a word spoken in due season, how good is it!"
+    },
+    {
+      "ref": "Proverbs 15:24",
+      "proverb": "The way of life is above to the wise, that he may depart from hell beneath."
+    },
+    {
+      "ref": "Proverbs 15:25",
+      "proverb": "The LORD will destroy the house of the proud: but he will establish the border of the widow."
+    },
+    {
+      "ref": "Proverbs 15:26",
+      "proverb": "The thoughts of the wicked are an abomination to the LORD: but the words of the pure are pleasant words."
+    },
+    {
+      "ref": "Proverbs 15:27",
+      "proverb": "He that is greedy of gain troubleth his own house; but he that hateth gifts shall live."
+    },
+    {
+      "ref": "Proverbs 15:28",
+      "proverb": "The heart of the righteous studieth to answer: but the mouth of the wicked poureth out evil things."
+    },
+    {
+      "ref": "Proverbs 15:29",
+      "proverb": "The LORD is far from the wicked: but he heareth the prayer of the righteous."
+    },
+    {
+      "ref": "Proverbs 15:30",
+      "proverb": "The light of the eyes rejoiceth the heart: a good report maketh the bones fat."
+    },
+    {
+      "ref": "Proverbs 15:31",
+      "proverb": "The ear that heareth the reproof of life abideth among the wise."
+    },
+    {
+      "ref": "Proverbs 15:32",
+      "proverb": "He that refuseth instruction despiseth his own soul: but he that heareth reproof getteth understanding."
+    },
+    {
+      "ref": "Proverbs 15:33",
+      "proverb": "The fear of the LORD is the instruction of wisdom; and before honour is humility."
+    },
+    {
+      "ref": "Proverbs 16:1",
+      "proverb": "The preparations of the heart in man, and the answer of the tongue, is from the LORD."
+    },
+    {
+      "ref": "Proverbs 16:2",
+      "proverb": "All the ways of a man are clean in his own eyes; but the LORD weigheth the spirits."
+    },
+    {
+      "ref": "Proverbs 16:3",
+      "proverb": "Commit thy works unto the LORD, and thy thoughts shall be established."
+    },
+    {
+      "ref": "Proverbs 16:4",
+      "proverb": "The LORD hath made all things for himself: yea, even the wicked for the day of evil."
+    },
+    {
+      "ref": "Proverbs 16:5",
+      "proverb": "Every one that is proud in heart is an abomination to the LORD: though hand join in hand, he shall not be unpunished."
+    },
+    {
+      "ref": "Proverbs 16:6",
+      "proverb": "By mercy and truth iniquity is purged: and by the fear of the LORD men depart from evil."
+    },
+    {
+      "ref": "Proverbs 16:7",
+      "proverb": "When a man's ways please the LORD, he maketh even his enemies to be at peace with him."
+    },
+    {
+      "ref": "Proverbs 16:8",
+      "proverb": "Better is a little with righteousness than great revenues without right."
+    },
+    {
+      "ref": "Proverbs 16:9",
+      "proverb": "A man's heart deviseth his way: but the LORD directeth his steps."
+    },
+    {
+      "ref": "Proverbs 16:10",
+      "proverb": "A divine sentence is in the lips of the king: his mouth transgresseth not in judgment."
+    },
+    {
+      "ref": "Proverbs 16:11",
+      "proverb": "A just weight and balance are the LORD's: all the weights of the bag are his work."
+    },
+    {
+      "ref": "Proverbs 16:12",
+      "proverb": "It is an abomination to kings to commit wickedness: for the throne is established by righteousness."
+    },
+    {
+      "ref": "Proverbs 16:13",
+      "proverb": "Righteous lips are the delight of kings; and they love him that speaketh right."
+    },
+    {
+      "ref": "Proverbs 16:14",
+      "proverb": "The wrath of a king is as messengers of death: but a wise man will pacify it."
+    },
+    {
+      "ref": "Proverbs 16:15",
+      "proverb": "In the light of the king's countenance is life; and his favour is as a cloud of the latter rain."
+    },
+    {
+      "ref": "Proverbs 16:16",
+      "proverb": "How much better is it to get wisdom than gold! and to get understanding rather to be chosen than silver!"
+    },
+    {
+      "ref": "Proverbs 16:17",
+      "proverb": "The highway of the upright is to depart from evil: he that keepeth his way preserveth his soul."
+    },
+    {
+      "ref": "Proverbs 16:18",
+      "proverb": "Pride goeth before destruction, and an haughty spirit before a fall."
+    },
+    {
+      "ref": "Proverbs 16:19",
+      "proverb": "Better it is to be of a lowly spirit with the poor, than to divide the spoil with the proud."
+    },
+    {
+      "ref": "Proverbs 16:20",
+      "proverb": "He that handleth a matter wisely shall find good: and whoso trusteth in the LORD, happy is he."
+    },
+    {
+      "ref": "Proverbs 16:21",
+      "proverb": "The wise in heart shall be called prudent: and the sweetness of the lips increaseth learning."
+    },
+    {
+      "ref": "Proverbs 16:22",
+      "proverb": "Understanding is a wellspring of life unto him that hath it: but the instruction of fools is folly."
+    },
+    {
+      "ref": "Proverbs 16:23",
+      "proverb": "The heart of the wise teacheth his mouth, and addeth learning to his lips."
+    },
+    {
+      "ref": "Proverbs 16:24",
+      "proverb": "Pleasant words are as an honeycomb, sweet to the soul, and health to the bones."
+    },
+    {
+      "ref": "Proverbs 16:25",
+      "proverb": "There is a way that seemeth right unto a man, but the end thereof are the ways of death."
+    },
+    {
+      "ref": "Proverbs 16:26",
+      "proverb": "He also that is slack in his work is brother to him that is a great waster."
+    },
+    {
+      "ref": "Proverbs 16:27",
+      "proverb": "An ungodly man diggeth up evil: and in his lips there is as a burning fire."
+    },
+    {
+      "ref": "Proverbs 16:28",
+      "proverb": "A froward man soweth strife: and a whisperer separateth chief friends."
+    },
+    {
+      "ref": "Proverbs 16:29",
+      "proverb": "A violent man enticeth his neighbour, and leadeth him into the way that is not good."
+    },
+    {
+      "ref": "Proverbs 16:30",
+      "proverb": "He shutteth his eyes to devise froward things: moving his lips he bringeth evil to pass."
+    },
+    {
+      "ref": "Proverbs 16:31",
+      "proverb": "The hoary head is a crown of glory, if it be found in the way of righteousness."
+    },
+    {
+      "ref": "Proverbs 16:32",
+      "proverb": "He that is slow to wrath is of great understanding: but he that is hasty of spirit exalteth folly."
+    },
+    {
+      "ref": "Proverbs 16:33",
+      "proverb": "The lot is cast into the lap; but the whole disposing thereof is of the LORD."
+    },
+    {
+      "ref": "Proverbs 17:1",
+      "proverb": "Better is a dry morsel, and quietness therewith, than an house full of sacrifices with strife."
+    },
+    {
+      "ref": "Proverbs 17:2",
+      "proverb": "A wise servant shall have rule over a son that causeth shame, and shall have part of the inheritance among the brethren."
+    },
+    {
+      "ref": "Proverbs 17:3",
+      "proverb": "The fining pot is for silver, and the furnace for gold: but the LORD trieth the hearts."
+    },
+    {
+      "ref": "Proverbs 17:4",
+      "proverb": "A wicked doer giveth heed to false lips; and a liar giveth ear to a naughty tongue."
+    },
+    {
+      "ref": "Proverbs 17:5",
+      "proverb": "Whoso mocketh the poor reproacheth his Maker: and he that is glad at calamities shall not be unpunished."
+    },
+    {
+      "ref": "Proverbs 17:6",
+      "proverb": "Children's children are the crown of old men; and the glory of children are their fathers."
+    },
+    {
+      "ref": "Proverbs 17:7",
+      "proverb": "Excellent speech becometh not a fool: much less do lying lips a prince."
+    },
+    {
+      "ref": "Proverbs 17:8",
+      "proverb": "A gift is as a precious stone in the eyes of him that hath it: whithersoever it turneth, it prospereth."
+    },
+    {
+      "ref": "Proverbs 17:9",
+      "proverb": "He that covereth a transgression seeketh love; but he that repeateth a matter separateth very friends."
+    },
+    {
+      "ref": "Proverbs 17:10",
+      "proverb": "A reproof entereth more into a wise man than an hundred stripes into a fool."
+    },
+    {
+      "ref": "Proverbs 17:11",
+      "proverb": "An evil man seeketh only rebellion: therefore a cruel messenger shall be sent against him."
+    },
+    {
+      "ref": "Proverbs 17:12",
+      "proverb": "Let a bear robbed of her whelps meet a man, rather than a fool in his folly."
+    },
+    {
+      "ref": "Proverbs 17:13",
+      "proverb": "Whoso rewardeth evil for good, evil shall not depart from his house."
+    },
+    {
+      "ref": "Proverbs 17:14",
+      "proverb": "The beginning of strife is as when one letteth out water: therefore leave off contention, before it be meddled with."
+    },
+    {
+      "ref": "Proverbs 17:15",
+      "proverb": "He that justifieth the wicked, and he that condemneth the just, even they both alike are abomination to the LORD."
+    },
+    {
+      "ref": "Proverbs 17:16",
+      "proverb": "Wherefore is there a price in the hand of a fool to get wisdom, seeing he hath no heart to it?"
+    },
+    {
+      "ref": "Proverbs 17:17",
+      "proverb": "A friend loveth at all times, and a brother is born for adversity."
+    },
+    {
+      "ref": "Proverbs 17:18",
+      "proverb": "A man void of understanding striketh hands, and becometh surety in the presence of his friend."
+    },
+    {
+      "ref": "Proverbs 17:19",
+      "proverb": "He loveth transgression that loveth strife: and he that exalteth his gate seeketh destruction."
+    },
+    {
+      "ref": "Proverbs 17:20",
+      "proverb": "A man of wicked devices falleth into mischief: and he that soweth disobedience reapeth it."
+    },
+    {
+      "ref": "Proverbs 17:21",
+      "proverb": "He that begetteth a fool doeth it to his sorrow: and the father of a fool hath no joy."
+    },
+    {
+      "ref": "Proverbs 17:22",
+      "proverb": "A merry heart doeth good like a medicine: but a broken spirit drieth the bones."
+    },
+    {
+      "ref": "Proverbs 17:23",
+      "proverb": "A wicked man taketh a gift out of the bosom to pervert the ways of judgment."
+    },
+    {
+      "ref": "Proverbs 17:24",
+      "proverb": "Wisdom is before him that hath understanding; but the eyes of a fool are in the ends of the earth."
+    },
+    {
+      "ref": "Proverbs 17:25",
+      "proverb": "A foolish son is a grief to his father, and bitterness to her that bare him."
+    },
+    {
+      "ref": "Proverbs 17:26",
+      "proverb": "Also to punish the just is not good, nor to strike princes for equity."
+    },
+    {
+      "ref": "Proverbs 17:27",
+      "proverb": "He that hath knowledge spareth his words: and a man of understanding is of an excellent spirit."
+    },
+    {
+      "ref": "Proverbs 17:28",
+      "proverb": "Even a fool, when he holdeth his peace, is counted wise: and he that shutteth his lips is esteemed a man of understanding."
+    },
+    {
+      "ref": "Proverbs 18:1",
+      "proverb": "Through desire a man, having separated himself, seeketh and intermeddleth with all wisdom."
+    },
+    {
+      "ref": "Proverbs 18:2",
+      "proverb": "A fool hath no delight in understanding, but that his heart may discover itself."
+    },
+    {
+      "ref": "Proverbs 18:3",
+      "proverb": "When the wicked cometh, then cometh also contempt, and with ignominy reproach."
+    },
+    {
+      "ref": "Proverbs 18:4",
+      "proverb": "The words of a man's mouth are as deep waters, and the wellspring of wisdom as a flowing brook."
+    },
+    {
+      "ref": "Proverbs 18:5",
+      "proverb": "It is not good to accept the person of the wicked, to overthrow the righteous in judgment."
+    },
+    {
+      "ref": "Proverbs 18:6",
+      "proverb": "A fool's lips enter into contention, and his mouth calleth for strokes."
+    },
+    {
+      "ref": "Proverbs 18:7",
+      "proverb": "A fool's mouth is his destruction, and his lips are the snare of his soul."
+    },
+    {
+      "ref": "Proverbs 18:8",
+      "proverb": "The words of a whisperer are as wounds, and they go down into the innermost parts of the belly."
+    },
+    {
+      "ref": "Proverbs 18:9",
+      "proverb": "He also that is slothful in his work is brother to him that is a great waster."
+    },
+    {
+      "ref": "Proverbs 18:10",
+      "proverb": "The name of the LORD is a strong tower: the righteous runneth into it, and is safe."
+    },
+    {
+      "ref": "Proverbs 18:11",
+      "proverb": "The rich man's wealth is his strong city, and as an high wall in his own conceit."
+    },
+    {
+      "ref": "Proverbs 18:12",
+      "proverb": "Before destruction the heart of man is haughty, and before honour is humility."
+    },
+    {
+      "ref": "Proverbs 18:13",
+      "proverb": "He that answereth a matter before he heareth it, it is folly and shame unto him."
+    },
+    {
+      "ref": "Proverbs 18:14",
+      "proverb": "The spirit of a man will sustain his infirmity; but a wounded spirit who can bear?"
+    },
+    {
+      "ref": "Proverbs 18:15",
+      "proverb": "The heart of the prudent getteth knowledge; and the ear of the wise seeketh knowledge."
+    },
+    {
+      "ref": "Proverbs 18:16",
+      "proverb": "A man's gift maketh room for him; and bringeth him before great men."
+    },
+    {
+      "ref": "Proverbs 18:17",
+      "proverb": "He that is first in his own cause seemeth just; but his neighbour cometh and searcheth him."
+    },
+    {
+      "ref": "Proverbs 18:18",
+      "proverb": "The lot causeth contentions to cease, and parteth between the mighty."
+    },
+    {
+      "ref": "Proverbs 18:19",
+      "proverb": "A brother offended is harder to be won than a strong city: and their contentions are like the bars of a castle."
+    },
+    {
+      "ref": "Proverbs 18:20",
+      "proverb": "A man's belly shall be satisfied with the fruit of his mouth; and with the increase of his lips shall he be filled."
+    },
+    {
+      "ref": "Proverbs 18:21",
+      "proverb": "Death and life are in the power of the tongue: and they that love it shall eat the fruit thereof."
+    },
+    {
+      "ref": "Proverbs 18:22",
+      "proverb": "Whoso findeth a wife findeth a good thing, and obtaineth favour of the LORD."
+    },
+    {
+      "ref": "Proverbs 18:23",
+      "proverb": "The poor useth intreaties; but the rich answereth roughly."
+    },
+    {
+      "ref": "Proverbs 18:24",
+      "proverb": "A man that hath friends must shew himself friendly: and there is a friend that sticketh closer than a brother."
+    },
+    {
+      "ref": "Proverbs 19:1",
+      "proverb": "Better is the poor that walketh in his integrity, than he that is perverse in his lips, and is a fool."
+    },
+    {
+      "ref": "Proverbs 19:2",
+      "proverb": "Also, that the soul be without knowledge, it is not good; and he that hasteth with his feet sinneth."
+    },
+    {
+      "ref": "Proverbs 19:3",
+      "proverb": "The foolishness of man perverteth his way: and his heart fretteth against the LORD."
+    },
+    {
+      "ref": "Proverbs 19:4",
+      "proverb": "Wealth maketh many friends; but the poor is separated from his neighbour."
+    },
+    {
+      "ref": "Proverbs 19:5",
+      "proverb": "A false witness shall not be unpunished, and he that speaketh lies shall not escape."
+    },
+    {
+      "ref": "Proverbs 19:6",
+      "proverb": "Many will entreat the favour of the prince: and every man is a friend to him that giveth gifts."
+    },
+    {
+      "ref": "Proverbs 19:7",
+      "proverb": "All the brethren of the poor do hate him: how much more do his friends go far from him! he pursueth them with words, but they are gone."
+    },
+    {
+      "ref": "Proverbs 19:8",
+      "proverb": "He that getteth wisdom loveth his own soul: he that keepeth understanding shall find good."
+    },
+    {
+      "ref": "Proverbs 19:9",
+      "proverb": "A false witness shall not be unpunished, and he that speaketh lies shall perish."
+    },
+    {
+      "ref": "Proverbs 19:10",
+      "proverb": "Delight is not seemly for a fool; much less for a servant to have rule over princes."
+    },
+    {
+      "ref": "Proverbs 19:11",
+      "proverb": "The discretion of a man deferreth his anger; and it is his glory to pass over a transgression."
+    },
+    {
+      "ref": "Proverbs 19:12",
+      "proverb": "The king’s wrath is as the roaring of a lion; but his favour is as dew upon the grass."
+    },
+    {
+      "ref": "Proverbs 19:13",
+      "proverb": "A foolish son is the calamity of his father: and the contentions of a wife are a continual dropping."
+    },
+    {
+      "ref": "Proverbs 19:14",
+      "proverb": "House and riches are the inheritance of fathers: and a prudent wife is from the LORD."
+    },
+    {
+      "ref": "Proverbs 19:15",
+      "proverb": "Slothfulness casteth into a deep sleep; and an idle soul shall suffer hunger."
+    },
+    {
+      "ref": "Proverbs 19:16",
+      "proverb": "He that keepeth the commandment keepeth his own soul; but he that despiseth his ways shall die."
+    },
+    {
+      "ref": "Proverbs 19:17",
+      "proverb": "He that hath pity upon the poor lendeth unto the LORD; and that which he hath given will he pay him again."
+    },
+    {
+      "ref": "Proverbs 19:18",
+      "proverb": "Chasten thy son while there is hope, and let not thy soul spare for his crying."
+    },
+    {
+      "ref": "Proverbs 19:19",
+      "proverb": "A man of great wrath shall suffer punishment: for if thou deliver him, yet thou must do it again."
+    },
+    {
+      "ref": "Proverbs 19:20",
+      "proverb": "Hear counsel, and receive instruction, that thou mayest be wise in thy latter end."
+    },
+    {
+      "ref": "Proverbs 19:21",
+      "proverb": "There are many devices in a man’s heart; nevertheless the counsel of the LORD, that shall stand."
+    },
+    {
+      "ref": "Proverbs 19:22",
+      "proverb": "The desire of a man is his kindness: and a poor man is better than a liar."
+    },
+    {
+      "ref": "Proverbs 19:23",
+      "proverb": "The fear of the LORD tendeth to life: and he that hath it shall abide satisfied; he shall not be visited with evil."
+    },
+    {
+      "ref": "Proverbs 19:24",
+      "proverb": "The slothful man hideth his hand in his bosom, and will not so much as bring it to his mouth again."
+    },
+    {
+      "ref": "Proverbs 19:25",
+      "proverb": "Smite a scorner, and the simple will beware: and reprove one that hath understanding, and he will understand knowledge."
+    },
+    {
+      "ref": "Proverbs 19:26",
+      "proverb": "He that wasteth his father, and chaseth away his mother, is a son that causeth shame, and bringeth reproach."
+    },
+    {
+      "ref": "Proverbs 19:27",
+      "proverb": "Cease, my son, to hear the instruction that causeth to err from the words of knowledge."
+    },
+    {
+      "ref": "Proverbs 19:28",
+      "proverb": "An ungodly witness scorneth judgment: and the mouth of the wicked devoureth iniquity."
+    },
+    {
+      "ref": "Proverbs 19:29",
+      "proverb": "Judgments are prepared for scorners, and stripes for the back of fools."
+    },
+    {
+      "ref": "Proverbs 20:1",
+      "proverb": "Wine is a mocker, strong drink is raging: and whosoever is deceived thereby is not wise."
+    },
+    {
+      "ref": "Proverbs 20:2",
+      "proverb": "The terror of a king is as the roaring of a lion: whoso provoketh him to anger sinneth against his own soul."
+    },
+    {
+      "ref": "Proverbs 20:3",
+      "proverb": "It is an honour for a man to cease from strife: but every fool will be meddling."
+    },
+    {
+      "ref": "Proverbs 20:4",
+      "proverb": "The sluggard will not plow by reason of the cold; therefore shall he beg in harvest, and have nothing."
+    },
+    {
+      "ref": "Proverbs 20:5",
+      "proverb": "Counsel in the heart of man is like deep water; but a man of understanding will draw it out."
+    },
+    {
+      "ref": "Proverbs 20:6",
+      "proverb": "Most men will proclaim every one his own goodness: but a faithful man who can find?"
+    },
+    {
+      "ref": "Proverbs 20:7",
+      "proverb": "The just man walketh in his integrity: his children are blessed after him."
+    },
+    {
+      "ref": "Proverbs 20:8",
+      "proverb": "A king that sitteth in the throne of judgment scattereth away all evil with his eyes."
+    },
+    {
+      "ref": "Proverbs 20:9",
+      "proverb": "Who can say, I have made my heart clean, I am pure from my sin?"
+    },
+    {
+      "ref": "Proverbs 20:10",
+      "proverb": "Differing weights, and differing measures, both of them are alike abomination to the LORD."
+    },
+    {
+      "ref": "Proverbs 20:11",
+      "proverb": "Even a child is known by his doings, whether his work be pure, and whether it be right."
+    },
+    {
+      "ref": "Proverbs 20:12",
+      "proverb": "The hearing ear, and the seeing eye, the LORD hath made even both of them."
+    },
+    {
+      "ref": "Proverbs 20:13",
+      "proverb": "Love not sleep, lest thou come to poverty; open thine eyes, and thou shalt be satisfied with bread."
+    },
+    {
+      "ref": "Proverbs 20:14",
+      "proverb": "It is nought, it is nought, saith the buyer: but when he is gone his way, then he boasteth."
+    },
+    {
+      "ref": "Proverbs 20:15",
+      "proverb": "There is gold, and a multitude of rubies: but the lips of knowledge are a precious jewel."
+    },
+    {
+      "ref": "Proverbs 20:16",
+      "proverb": "Take his garment that is surety for a stranger: and take a pledge of him for a strange woman."
+    },
+    {
+      "ref": "Proverbs 20:17",
+      "proverb": "Bread of deceit is sweet to a man; but afterwards his mouth shall be filled with gravel."
+    },
+    {
+      "ref": "Proverbs 20:18",
+      "proverb": "Every purpose is established by counsel: and with good advice make war."
+    },
+    {
+      "ref": "Proverbs 20:19",
+      "proverb": "He that goeth about as a talebearer revealeth secrets: therefore meddle not with him that flattereth with his lips."
+    },
+    {
+      "ref": "Proverbs 20:20",
+      "proverb": "Whoso curseth his father or his mother, his lamp shall be put out in obscure darkness."
+    },
+    {
+      "ref": "Proverbs 20:21",
+      "proverb": "An inheritance may be gotten hastily at the beginning; but the end thereof shall not be blessed."
+    },
+    {
+      "ref": "Proverbs 20:22",
+      "proverb": "Say not thou, I will recompense evil; but wait on the LORD, and he shall save thee."
+    },
+    {
+      "ref": "Proverbs 20:23",
+      "proverb": "Divers weights are an abomination unto the LORD; and a false balance is not good."
+    },
+    {
+      "ref": "Proverbs 20:24",
+      "proverb": "Man’s goings are of the LORD; how can a man then understand his own way?"
+    },
+    {
+      "ref": "Proverbs 20:25",
+      "proverb": "It is a snare to the man that devoureth that which is holy, and after vows to make inquiry."
+    },
+    {
+      "ref": "Proverbs 20:26",
+      "proverb": "A wise king scattereth the wicked, and bringeth the wheel over them."
+    },
+    {
+      "ref": "Proverbs 20:27",
+      "proverb": "The spirit of man is the candle of the LORD, searching all the inward parts of the belly."
+    },
+    {
+      "ref": "Proverbs 20:28",
+      "proverb": "Mercy and truth preserve the king: and his throne is upholden by mercy."
+    },
+    {
+      "ref": "Proverbs 20:29",
+      "proverb": "The glory of young men is their strength: and the beauty of old men is the grey head."
+    },
+    {
+      "ref": "Proverbs 20:30",
+      "proverb": "The blueness of a wound cleanseth away evil: so do stripes the inward parts of the belly."
+    },
+    {
+      "ref": "Proverbs 21:1",
+      "proverb": "The king's heart is in the hand of the LORD, as the rivers of water: he turneth it whithersoever he will."
+    },
+    {
+      "ref": "Proverbs 21:2",
+      "proverb": "Every way of a man is right in his own eyes: but the LORD pondereth the hearts."
+    },
+    {
+      "ref": "Proverbs 21:3",
+      "proverb": "To do justice and judgment is more acceptable to the LORD than sacrifice."
+    },
+    {
+      "ref": "Proverbs 21:4",
+      "proverb": "An high look, and a proud heart, and the plowing of the wicked, is sin."
+    },
+    {
+      "ref": "Proverbs 21:5",
+      "proverb": "The thoughts of the diligent tend only to plenteousness; but of every one that is hasty only to want."
+    },
+    {
+      "ref": "Proverbs 21:6",
+      "proverb": "The getting of treasures by a lying tongue is a vanity tossed to and fro of them that seek death."
+    },
+    {
+      "ref": "Proverbs 21:7",
+      "proverb": "The violence of the wicked will destroy them, because they refuse to do judgment."
+    },
+    {
+      "ref": "Proverbs 21:8",
+      "proverb": "The way of man is froward and strange: but as for the pure, his work is right."
+    },
+    {
+      "ref": "Proverbs 21:9",
+      "proverb": "It is better to dwell in a corner of the housetop, than with a brawling woman in a wide house."
+    },
+    {
+      "ref": "Proverbs 21:10",
+      "proverb": "The soul of the wicked desireth evil: his neighbour findeth no favour in his eyes."
+    },
+    {
+      "ref": "Proverbs 21:11",
+      "proverb": "When the scorner is punished, the simple is made wise: and when the wise is instructed, he receiveth knowledge."
+    },
+    {
+      "ref": "Proverbs 21:12",
+      "proverb": "The righteous man wisely considereth the house of the wicked: but God overthroweth the wicked for their wickedness."
+    },
+    {
+      "ref": "Proverbs 21:13",
+      "proverb": "Whoso stoppeth his ears at the cry of the poor, he also shall cry himself, but shall not be heard."
+    },
+    {
+      "ref": "Proverbs 21:14",
+      "proverb": "A gift in secret pacifieth anger: and a reward in the bosom strong wrath."
+    },
+    {
+      "ref": "Proverbs 21:15",
+      "proverb": "It is joy to the just to do judgment: but destruction shall be to the workers of iniquity."
+    },
+    {
+      "ref": "Proverbs 21:16",
+      "proverb": "The man that wandereth out of the way of understanding shall remain in the congregation of the dead."
+    },
+    {
+      "ref": "Proverbs 21:17",
+      "proverb": "He that loveth pleasure shall be a poor man: he that loveth wine and oil shall not be rich."
+    },
+    {
+      "ref": "Proverbs 21:18",
+      "proverb": "The wicked shall be a ransom for the righteous, and the transgressor for the upright."
+    },
+    {
+      "ref": "Proverbs 21:19",
+      "proverb": "It is better to dwell in the wilderness, than with a contentious and an angry woman."
+    },
+    {
+      "ref": "Proverbs 21:20",
+      "proverb": "There is treasure to be desired and oil in the dwelling of the wise; but a foolish man spendeth it up."
+    },
+    {
+      "ref": "Proverbs 21:21",
+      "proverb": "He that followeth after righteousness and mercy findeth life, righteousness, and honour."
+    },
+    {
+      "ref": "Proverbs 21:22",
+      "proverb": "A good man leaveth an inheritance to his children's children: and the wealth of the sinner is laid up for the just."
+    },
+    {
+      "ref": "Proverbs 21:23",
+      "proverb": "Whoso keepeth his mouth and his tongue keepeth his soul from troubles."
+    },
+    {
+      "ref": "Proverbs 21:24",
+      "proverb": "The proud and haughty man, scorner is his name; he that dealeth in proud wrath shall be punished."
+    },
+    {
+      "ref": "Proverbs 21:25",
+      "proverb": "The desire of the slothful killeth him; for his hands refuse to labour."
+    },
+    {
+      "ref": "Proverbs 21:26",
+      "proverb": "He coveteth greedily all the day long: but the righteous giveth and spareth not."
+    },
+    {
+      "ref": "Proverbs 21:27",
+      "proverb": "The sacrifice of the wicked is an abomination: how much more when he bringeth it with a wicked mind?"
+    },
+    {
+      "ref": "Proverbs 21:28",
+      "proverb": "A false witness shall perish: but the man that heareth speaketh constantly."
+    },
+    {
+      "ref": "Proverbs 21:29",
+      "proverb": "A wicked man hardeneth his face: but as for the upright, he directeth his way."
+    },
+    {
+      "ref": "Proverbs 21:30",
+      "proverb": "There is no wisdom nor understanding nor counsel against the LORD."
+    },
+    {
+      "ref": "Proverbs 21:31",
+      "proverb": "The horse is prepared against the day of battle: but safety is of the LORD."
+    },
+    {
+      "ref": "Proverbs 22:1",
+      "proverb": "A good name is rather to be chosen than great riches, and loving favour rather than silver and gold."
+    },
+    {
+      "ref": "Proverbs 22:2",
+      "proverb": "The rich and poor meet together: the LORD is the maker of them all."
+    },
+    {
+      "ref": "Proverbs 22:3",
+      "proverb": "A prudent man foreseeth the evil, and hideth himself: but the simple pass on, and are punished."
+    },
+    {
+      "ref": "Proverbs 22:4",
+      "proverb": "By humility and the fear of the LORD are riches, and honour, and life."
+    },
+    {
+      "ref": "Proverbs 22:5",
+      "proverb": "Thorns and snares are in the way of the froward: he that keepeth his soul shall be far from them."
+    },
+    {
+      "ref": "Proverbs 22:6",
+      "proverb": "Train up a child in the way he should go: and when he is old, he will not depart from it."
+    },
+    {
+      "ref": "Proverbs 22:7",
+      "proverb": "The rich ruleth over the poor, and the borrower is servant to the lender."
+    },
+    {
+      "ref": "Proverbs 22:8",
+      "proverb": "He that soweth iniquity shall reap vanity: and the rod of his anger shall fail."
+    },
+    {
+      "ref": "Proverbs 22:9",
+      "proverb": "He that hath a bountiful eye shall be blessed; for he giveth of his bread to the poor."
+    },
+    {
+      "ref": "Proverbs 22:10",
+      "proverb": "Cast out the scorner, and contention shall go out; yea, strife and reproach shall cease."
+    },
+    {
+      "ref": "Proverbs 22:11",
+      "proverb": "He that loveth pureness of heart, for the grace of his lips the king shall be his friend."
+    },
+    {
+      "ref": "Proverbs 22:12",
+      "proverb": "The eyes of the LORD preserve knowledge, and he overthroweth the words of the transgressor."
+    },
+    {
+      "ref": "Proverbs 22:13",
+      "proverb": "The slothful man saith, There is a lion without, I shall be slain in the streets."
+    },
+    {
+      "ref": "Proverbs 22:14",
+      "proverb": "The mouth of strange women is a deep pit: he that is abhorred of the LORD shall fall therein."
+    },
+    {
+      "ref": "Proverbs 22:15",
+      "proverb": "Foolishness is bound in the heart of a child; but the rod of correction shall drive it far from him."
+    },
+    {
+      "ref": "Proverbs 22:16",
+      "proverb": "He that oppresseth the poor to increase his riches, and he that giveth to the rich, shall surely come to want."
+    }
+  ]
+}
