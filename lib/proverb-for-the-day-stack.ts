@@ -18,19 +18,25 @@ export class ProverbForTheDayStack extends cdk.Stack {
       billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
     });
 
-    const proverbForTheDayLambda = new lambda.Function(
-      this,
-      "proverb-for-the-day",
-      {
-        functionName: "proverb-for-the-day",
-        runtime: lambda.Runtime.NODEJS_22_X,
-        handler: "index.handler",
-        code: lambda.Code.fromAsset("dist/src/proverb-for-the-day"),
-        environment: {
-          TABLE_NAME: table.tableName,
-        },
-      }
-    );
+    const chooseProverb = new lambda.Function(this, "choose-proverb", {
+      functionName: "choose-proverb",
+      runtime: lambda.Runtime.NODEJS_22_X,
+      handler: "index.handler",
+      code: lambda.Code.fromAsset("dist/src/choose-proverb"),
+      environment: {
+        TABLE_NAME: table.tableName,
+      },
+    });
+
+    const getProverb = new lambda.Function(this, "get-proverb", {
+      functionName: "get-proverb",
+      runtime: lambda.Runtime.NODEJS_22_X,
+      handler: "index.handler",
+      code: lambda.Code.fromAsset("dist/src/get-proverb"),
+      environment: {
+        TABLE_NAME: table.tableName,
+      },
+    });
 
     const api = new apigateway.RestApi(this, "proverb-for-the-day-api", {
       restApiName: "proverb-for-the-day-api",
@@ -38,13 +44,9 @@ export class ProverbForTheDayStack extends cdk.Stack {
 
     api.root
       .addResource("{version}")
-      .addMethod(
-        "GET",
-        new apigateway.LambdaIntegration(proverbForTheDayLambda),
-        {
-          authorizationType: apigateway.AuthorizationType.NONE,
-        }
-      );
+      .addMethod("GET", new apigateway.LambdaIntegration(getProverb), {
+        authorizationType: apigateway.AuthorizationType.NONE,
+      });
 
     const loadProverbsLambda = new lambda.Function(this, "load-proverbs", {
       functionName: "load-proverbs",
@@ -56,13 +58,13 @@ export class ProverbForTheDayStack extends cdk.Stack {
       },
     });
 
-    table.grantReadWriteData(proverbForTheDayLambda);
+    table.grantReadWriteData(chooseProverb);
     table.grantWriteData(loadProverbsLambda);
 
     new events.Rule(this, "proverb-for-the-day-schedule", {
       ruleName: "proverb-for-the-day-schedule",
       schedule: events.Schedule.cron({ minute: "0", hour: "0" }),
-      targets: [new targets.LambdaFunction(proverbForTheDayLambda)],
+      targets: [new targets.LambdaFunction(chooseProverb)],
     });
   }
 }

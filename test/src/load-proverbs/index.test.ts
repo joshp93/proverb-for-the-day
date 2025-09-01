@@ -1,12 +1,13 @@
-import { handler } from "../../../src/load-proverbs/index";
-import { BatchWriteCommand } from "@aws-sdk/lib-dynamodb";
+import {
+  BatchWriteCommand,
+  DynamoDBDocumentClient,
+} from "@aws-sdk/lib-dynamodb";
 import { mockClient } from "aws-sdk-client-mock";
-import { DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
 import * as fs from "fs";
 import * as path from "path";
-import { LoadProverbsEvent } from "../../../src/load-proverbs/models";
+import { handler } from "../../../src/load-proverbs/index";
 
-describe("handler", () => {
+describe(handler.name, () => {
   const ddbMock = mockClient(DynamoDBDocumentClient);
   const testJsonPath = path.join(__dirname, "test-data", "kjv.json");
   let testJson: string;
@@ -20,9 +21,15 @@ describe("handler", () => {
     ddbMock.resetHistory();
   });
 
-  it("Should batch write proverbs in groups of 25", async () => {
-    const parsed: LoadProverbsEvent = JSON.parse(testJson);
+  it("Should batch write proverbs in groups of 25 with correct PK/SK/proverb", async () => {
+    const {
+      LoadProverbsEventSchema,
+    } = require("../../../src/models/eventSchemas");
+    const parsed = LoadProverbsEventSchema.parse(JSON.parse(testJson));
+    ddbMock.on(BatchWriteCommand).resolves({});
+
     await handler(parsed);
+
     const total = parsed.proverbs.length;
     const expectedBatches = Math.ceil(total / 25);
     expect(ddbMock.commandCalls(BatchWriteCommand).length).toBe(
@@ -35,9 +42,13 @@ describe("handler", () => {
       const batchEnd = Math.min(batchStart + 25, total);
       const requestItems = call.args[0].input.RequestItems!["TestTable"];
       expect(requestItems.length).toBe(batchEnd - batchStart);
-      expect(ddbMock.commandCalls(BatchWriteCommand).length).toBe(
-        expectedBatches
-      );
+
+      for (const item of requestItems) {
+        expect(item.PutRequest!.Item!.pk).toMatch(/^kjv#Proverbs\d+:\d+$/);
+        expect(item.PutRequest!.Item!.sk).toMatch(/^Proverbs\d+:\d+$/);
+        expect(typeof item.PutRequest!.Item!.proverb).toBe("object");
+        expect(typeof item.PutRequest!.Item!.proverb.proverb).toBe("string");
+      }
     }
   });
 });
