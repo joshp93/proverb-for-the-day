@@ -1,3 +1,4 @@
+import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import {
   DynamoDBDocumentClient,
   GetCommand,
@@ -6,12 +7,10 @@ import {
 import {
   ProverbForTheDayEntitySchema,
   RefsEntitySchema,
-} from "../models/proverbStoreSchemas";
+} from "./proverbStoreSchemas";
 
 export const handler = async (): Promise<void> => {
-  const client = DynamoDBDocumentClient.from(
-    new (require("@aws-sdk/client-dynamodb").DynamoDBClient)({})
-  );
+  const client = DynamoDBDocumentClient.from(new DynamoDBClient({}));
   const tableName = process.env.TABLE_NAME!;
   const refsResult = await client.send(
     new GetCommand({

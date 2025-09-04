@@ -1,16 +1,15 @@
+import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient, GetCommand } from "@aws-sdk/lib-dynamodb";
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
 import {
   ProverbEntitySchema,
   ProverbForTheDayEntitySchema,
-} from "../models/proverbStoreSchemas";
+} from "./proverbStoreSchemas";
 
 export const handler = async (
   event: APIGatewayProxyEvent
 ): Promise<APIGatewayProxyResult> => {
-  const client = DynamoDBDocumentClient.from(
-    new (require("@aws-sdk/client-dynamodb").DynamoDBClient)({})
-  );
+  const client = DynamoDBDocumentClient.from(new DynamoDBClient({}));
   const tableName = process.env.TABLE_NAME!;
   const proverbForTheDayEntityResults = await client.send(
     new GetCommand({

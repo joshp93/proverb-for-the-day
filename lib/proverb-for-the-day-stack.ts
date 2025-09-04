@@ -22,7 +22,7 @@ export class ProverbForTheDayStack extends cdk.Stack {
       functionName: "choose-proverb",
       runtime: lambda.Runtime.NODEJS_22_X,
       handler: "index.handler",
-      code: lambda.Code.fromAsset("dist/src/choose-proverb"),
+      code: lambda.Code.fromAsset("dist/choose-proverb"),
       environment: {
         TABLE_NAME: table.tableName,
       },
@@ -32,7 +32,7 @@ export class ProverbForTheDayStack extends cdk.Stack {
       functionName: "get-proverb",
       runtime: lambda.Runtime.NODEJS_22_X,
       handler: "index.handler",
-      code: lambda.Code.fromAsset("dist/src/get-proverb"),
+      code: lambda.Code.fromAsset("dist/get-proverb"),
       environment: {
         TABLE_NAME: table.tableName,
       },
@@ -52,7 +52,7 @@ export class ProverbForTheDayStack extends cdk.Stack {
       functionName: "load-proverbs",
       runtime: lambda.Runtime.NODEJS_22_X,
       handler: "index.handler",
-      code: lambda.Code.fromAsset("dist/src/load-proverbs"),
+      code: lambda.Code.fromAsset("dist/load-proverbs"),
       environment: {
         TABLE_NAME: table.tableName,
       },
@@ -60,6 +60,7 @@ export class ProverbForTheDayStack extends cdk.Stack {
 
     table.grantReadWriteData(chooseProverb);
     table.grantWriteData(loadProverbsLambda);
+    table.grantReadData(getProverb);
 
     new events.Rule(this, "proverb-for-the-day-schedule", {
       ruleName: "proverb-for-the-day-schedule",

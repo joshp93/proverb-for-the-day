@@ -5,6 +5,7 @@ import {
 import { mockClient } from "aws-sdk-client-mock";
 import * as fs from "fs";
 import * as path from "path";
+import { LoadProverbsEventSchema } from "../../../src/load-proverbs/eventSchemas";
 import { handler } from "../../../src/load-proverbs/index";
 
 describe(handler.name, () => {
@@ -22,9 +23,6 @@ describe(handler.name, () => {
   });
 
   it("Should batch write proverbs in groups of 25 with correct PK/SK/proverb", async () => {
-    const {
-      LoadProverbsEventSchema,
-    } = require("../../../src/models/eventSchemas");
     const parsed = LoadProverbsEventSchema.parse(JSON.parse(testJson));
     ddbMock.on(BatchWriteCommand).resolves({});
 

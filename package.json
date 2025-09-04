@@ -8,12 +8,11 @@
   "scripts": {
     "typecheck": "tsc --noEmit",
     "pretest": "pnpm typecheck",
-    "build": "tsc",
-    "watch": "tsc -w",
+    "build": "tsup",
+    "watch": "tsup --watch",
     "test": "jest",
     "cdk": "cdk",
-    "prepublish": "pnpm build",
-    "publish": "cdk deploy --profile AdministratorAccess-640223110844",
+    "dep": "cdk deploy --profile AdministratorAccess-640223110844",
     "invoke:load": "aws lambda invoke --function-name load-proverbs temp/output.json --payload file://test/src/load-proverbs/test-data/kjv.json --cli-binary-format raw-in-base64-out --profile AdministratorAccess-640223110844 --output=json",
     "invoke:choose": "aws lambda invoke --function-name choose-proverb temp/output.json --profile AdministratorAccess-640223110844 --output=json"
   },

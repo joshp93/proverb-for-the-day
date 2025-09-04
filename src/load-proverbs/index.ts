@@ -3,11 +3,8 @@ import {
   BatchWriteCommand,
   DynamoDBDocumentClient,
 } from "@aws-sdk/lib-dynamodb";
-import {
-  LoadProverbsEvent,
-  LoadProverbsEventSchema,
-} from "../models/eventSchemas";
-import { ProverbEntitySchema } from "../models/proverbStoreSchemas";
+import { LoadProverbsEvent, LoadProverbsEventSchema } from "./eventSchemas";
+import { ProverbEntitySchema } from "./proverbStoreSchemas";
 
 export const handler = async (event: LoadProverbsEvent): Promise<void> => {
   console.debug("Event:", JSON.stringify(event));
