@@ -2,9 +2,11 @@ import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import {
   BatchWriteCommand,
   DynamoDBDocumentClient,
+  GetCommand,
+  PutCommand,
 } from "@aws-sdk/lib-dynamodb";
 import { LoadProverbsEvent, LoadProverbsEventSchema } from "./eventSchemas";
-import { ProverbEntitySchema } from "./proverbStoreSchemas";
+import { ProverbEntitySchema, RefsEntity } from "./proverbStoreSchemas";
 
 export const handler = async (event: LoadProverbsEvent): Promise<void> => {
   console.debug("Event:", JSON.stringify(event));
@@ -41,5 +43,36 @@ export const handler = async (event: LoadProverbsEvent): Promise<void> => {
     console.debug("Batch Write Command:", JSON.stringify(command));
     const response = await client.send(command);
     console.debug("Batch Write Response:", JSON.stringify(response));
+  }
+
+  const refsResult = await client.send(
+    new GetCommand({
+      TableName: tableName,
+      Key: {
+        pk: "refs",
+        sk: "refs",
+      },
+    })
+  );
+
+  if (!refsResult.Item) {
+    const refs: RefsEntity = {
+      pk: "refs",
+      sk: "refs",
+      allRefs: event.proverbs.map((p) =>
+        p.ref.replace(`${event.version}#`, "").replace(/\s+/g, "")
+      ),
+      usedRefs: [],
+    };
+
+    console.debug("Creating refs item", JSON.stringify(refs));
+    client.send(
+      new PutCommand({
+        TableName: tableName,
+        Item: refs,
+      })
+    );
+  } else {
+    console.debug("Refs item already exists, skipping creation.");
   }
 };

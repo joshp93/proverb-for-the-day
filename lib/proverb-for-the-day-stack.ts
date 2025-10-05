@@ -59,7 +59,7 @@ export class ProverbForTheDayStack extends cdk.Stack {
     });
 
     table.grantReadWriteData(chooseProverb);
-    table.grantWriteData(loadProverbsLambda);
+    table.grantReadWriteData(loadProverbsLambda);
     table.grantReadData(getProverb);
 
     new events.Rule(this, "proverb-for-the-day-schedule", {
