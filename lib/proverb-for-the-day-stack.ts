@@ -41,6 +41,9 @@ export class ProverbForTheDayStack extends cdk.Stack {
 
     const api = new apigateway.RestApi(this, "proverb-for-the-day-api", {
       restApiName: "proverb-for-the-day-api",
+      deployOptions: {
+        loggingLevel: apigateway.MethodLoggingLevel.ERROR,
+      },
     });
 
     const userPool = new cognito.UserPool(this, "lemuel-user-pool", {
@@ -71,6 +74,7 @@ export class ProverbForTheDayStack extends cdk.Stack {
         userPool: userPool,
         authFlows: {
           userSrp: true,
+          userPassword: true,
         },
         generateSecret: false,
       },
