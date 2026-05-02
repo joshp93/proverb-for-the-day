@@ -42,7 +42,7 @@ export class ProverbForTheDayStack extends cdk.Stack {
     const api = new apigateway.RestApi(this, "proverb-for-the-day-api", {
       restApiName: "proverb-for-the-day-api",
       deployOptions: {
-        loggingLevel: apigateway.MethodLoggingLevel.ERROR,
+        dataTraceEnabled: false,
       },
     });
 
