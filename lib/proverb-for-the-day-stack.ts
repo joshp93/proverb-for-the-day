@@ -1,5 +1,6 @@
 import * as cdk from "aws-cdk-lib";
 import * as apigateway from "aws-cdk-lib/aws-apigateway";
+import * as cognito from "aws-cdk-lib/aws-cognito";
 import * as dynamodb from "aws-cdk-lib/aws-dynamodb";
 import * as events from "aws-cdk-lib/aws-events";
 import * as targets from "aws-cdk-lib/aws-events-targets";
@@ -42,11 +43,80 @@ export class ProverbForTheDayStack extends cdk.Stack {
       restApiName: "proverb-for-the-day-api",
     });
 
+    const userPool = new cognito.UserPool(this, "lemuel-user-pool", {
+      userPoolName: "lemuel-user-pool",
+      selfSignUpEnabled: true,
+      signInAliases: {
+        email: true,
+      },
+      passwordPolicy: {
+        minLength: 8,
+        requireLowercase: true,
+        requireUppercase: true,
+        requireDigits: true,
+        requireSymbols: false,
+      },
+      standardAttributes: {
+        email: {
+          required: true,
+          mutable: true,
+        },
+      },
+    });
+
+    const userPoolClient = new cognito.UserPoolClient(
+      this,
+      "lemuel-web-client",
+      {
+        userPool: userPool,
+        authFlows: {
+          userSrp: true,
+        },
+        generateSecret: false,
+      },
+    );
+
+    const cognitoLambda = new lambda.Function(this, "lemuel-cognito", {
+      functionName: "lemuel-cognito",
+      runtime: lambda.Runtime.NODEJS_22_X,
+      handler: "index.handler",
+      code: lambda.Code.fromAsset("dist/lemuel-cognito"),
+      environment: {
+        COGNITO_CLIENT_ID: userPoolClient.userPoolClientId,
+        COGNITO_USER_POOL_ID: userPool.userPoolId,
+      },
+    });
+
+    userPool.grant(cognitoLambda, "cognito-idp:AdminInitiateAuth");
+
+    // Uncomment this when we have an auth protected endpoint ready to go.
+    // const authorizer = new apigateway.CognitoUserPoolsAuthorizer(
+    //   this,
+    //   "lemuel-authorizer",
+    //   {
+    //     cognitoUserPools: [userPool],
+    //   },
+    // );
+
     api.root
       .addResource("{version}")
       .addMethod("GET", new apigateway.LambdaIntegration(getProverb), {
         authorizationType: apigateway.AuthorizationType.NONE,
       });
+
+    const auth = api.root.addResource("auth");
+    auth
+      .addResource("sign-up")
+      .addMethod("POST", new apigateway.LambdaIntegration(cognitoLambda));
+    auth
+      .addResource("sign-in")
+      .addMethod("POST", new apigateway.LambdaIntegration(cognitoLambda));
+    auth
+      .addResource("forgot-password")
+      .addMethod("POST", new apigateway.LambdaIntegration(cognitoLambda));
+    auth
+      .addResource("confirm-forgot-password")
+      .addMethod("POST", new apigateway.LambdaIntegration(cognitoLambda));
 
     const loadProverbsLambda = new lambda.Function(this, "load-proverbs", {
       functionName: "load-proverbs",
