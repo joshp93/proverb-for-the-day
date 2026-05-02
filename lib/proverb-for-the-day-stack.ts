@@ -113,6 +113,9 @@ export class ProverbForTheDayStack extends cdk.Stack {
       .addResource("sign-up")
       .addMethod("POST", new apigateway.LambdaIntegration(cognitoLambda));
     auth
+      .addResource("confirm-sign-up")
+      .addMethod("POST", new apigateway.LambdaIntegration(cognitoLambda));
+    auth
       .addResource("sign-in")
       .addMethod("POST", new apigateway.LambdaIntegration(cognitoLambda));
     auth
