@@ -74,7 +74,7 @@ export class ProverbForTheDayStack extends cdk.Stack {
         userPool: userPool,
         authFlows: {
           userSrp: true,
-          userPassword: true,
+          adminUserPassword: true,
         },
         generateSecret: false,
       },
