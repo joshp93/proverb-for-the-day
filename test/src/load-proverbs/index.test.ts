@@ -1,6 +1,7 @@
 import {
   BatchWriteCommand,
   DynamoDBDocumentClient,
+  GetCommand,
 } from "@aws-sdk/lib-dynamodb";
 import { mockClient } from "aws-sdk-client-mock";
 import * as fs from "fs";
@@ -24,7 +25,17 @@ describe(handler.name, () => {
 
   it("Should batch write proverbs in groups of 25 with correct PK/SK/proverb", async () => {
     const parsed = LoadProverbsEventSchema.parse(JSON.parse(testJson));
-    ddbMock.on(BatchWriteCommand).resolves({});
+    ddbMock.on(BatchWriteCommand).resolves({
+      UnprocessedItems: {},
+      ItemCollectionMetrics: {},
+    });
+    ddbMock.on(GetCommand).resolves({
+      Item: {
+        pk: "refs",
+        sk: "refs",
+        allRefs: ["existing"],
+      },
+    });
 
     await handler(parsed);
 

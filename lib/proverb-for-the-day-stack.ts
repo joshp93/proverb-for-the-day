@@ -91,7 +91,7 @@ export class ProverbForTheDayStack extends cdk.Stack {
       },
     });
 
-    userPool.grant(cognitoLambda, "cognito-idp:AdminInitiateAuth");
+    userPool.grant(cognitoLambda, "cognito-idp:AdminInitiateAuth", "cognito-idp:AdminGetUser");
 
     // Uncomment this when we have an auth protected endpoint ready to go.
     // const authorizer = new apigateway.CognitoUserPoolsAuthorizer(
@@ -111,6 +111,9 @@ export class ProverbForTheDayStack extends cdk.Stack {
     const auth = api.root.addResource("auth");
     auth
       .addResource("sign-up")
+      .addMethod("POST", new apigateway.LambdaIntegration(cognitoLambda));
+    auth
+      .addResource("check-user")
       .addMethod("POST", new apigateway.LambdaIntegration(cognitoLambda));
     auth
       .addResource("confirm-sign-up")

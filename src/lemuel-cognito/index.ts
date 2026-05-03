@@ -1,6 +1,7 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
 import { handler as signUpHandler } from "./handlers/signUp";
 import { handler as confirmSignUpHandler } from "./handlers/confirmSignUp";
+import { handler as checkUserHandler } from "./handlers/checkUser";
 import { handler as signInHandler } from "./handlers/signIn";
 import { handler as forgotPasswordHandler } from "./handlers/forgotPassword";
 import { handler as confirmForgotPasswordHandler } from "./handlers/confirmForgotPassword";
@@ -14,6 +15,10 @@ export const handler = async (
   try {
     if (path.endsWith("/sign-up")) {
       return await signUpHandler(body);
+    }
+
+    if (path.endsWith("/check-user")) {
+      return await checkUserHandler(body);
     }
 
     if (path.endsWith("/confirm-sign-up")) {
