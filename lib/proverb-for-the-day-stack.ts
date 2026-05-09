@@ -1,6 +1,5 @@
 import * as cdk from "aws-cdk-lib";
 import * as apigateway from "aws-cdk-lib/aws-apigateway";
-import * as cognito from "aws-cdk-lib/aws-cognito";
 import * as dynamodb from "aws-cdk-lib/aws-dynamodb";
 import * as events from "aws-cdk-lib/aws-events";
 import * as targets from "aws-cdk-lib/aws-events-targets";
@@ -45,48 +44,6 @@ export class ProverbForTheDayStack extends cdk.Stack {
         dataTraceEnabled: false,
       },
     });
-
-    const userPool = new cognito.UserPool(this, "lemuel-user-pool", {
-      userPoolName: "lemuel-user-pool",
-      selfSignUpEnabled: true,
-      signInAliases: {
-        email: true,
-      },
-      passwordPolicy: {
-        minLength: 8,
-        requireLowercase: true,
-        requireUppercase: true,
-        requireDigits: true,
-        requireSymbols: false,
-      },
-      standardAttributes: {
-        email: {
-          required: true,
-          mutable: true,
-        },
-      },
-    });
-
-    const userPoolClient = new cognito.UserPoolClient(
-      this,
-      "lemuel-web-client",
-      {
-        userPool: userPool,
-        authFlows: {
-          userSrp: true,
-          adminUserPassword: true,
-        },
-        generateSecret: false,
-      },
-    );
-
-    // const authorizer = new apigateway.CognitoUserPoolsAuthorizer(
-    //   this,
-    //   "lemuel-authorizer",
-    //   {
-    //     cognitoUserPools: [userPool],
-    //   },
-    // );
 
     api.root
       .addResource("{version}")
