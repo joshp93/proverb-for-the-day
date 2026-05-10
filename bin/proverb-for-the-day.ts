@@ -7,5 +7,8 @@ const app = new cdk.App();
 
 const env = { account: "640223110844", region: "eu-west-2" };
 
-new LemuelUserManagementStack(app, "LemuelUserManagementStack", { env });
-new ProverbForTheDayStack(app, "ProverbForTheDayStack", { env });
+const userManagementStack = new LemuelUserManagementStack(app, "LemuelUserManagementStack", { env });
+new ProverbForTheDayStack(app, "ProverbForTheDayStack", {
+  env,
+  userPoolId: userManagementStack.userPool.userPoolId,
+});

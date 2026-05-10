@@ -38,6 +38,107 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
     },
   },
   "Resources": {
+    "checkuserexists488D9724": {
+      "DependsOn": [
+        "checkuserexistsServiceRoleDefaultPolicyD416E2A9",
+        "checkuserexistsServiceRole1501E617",
+      ],
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
+          },
+          "S3Key": "1c9d31cd9e65accc228d2537b57f0ba52310b90438d17079a03f0d8048127776.zip",
+        },
+        "Environment": {
+          "Variables": {
+            "USER_POOL_ID": {
+              "Fn::ImportValue": "UserMgmt:ExportsOutputReflemueluserpool9CAE2591D8756CD7",
+            },
+          },
+        },
+        "FunctionName": "check-user-exists",
+        "Handler": "index.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "checkuserexistsServiceRole1501E617",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs22.x",
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "checkuserexistsServiceRole1501E617": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "checkuserexistsServiceRoleDefaultPolicyD416E2A9": {
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "cognito-idp:AdminGetUser",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:aws:cognito-idp:",
+                    {
+                      "Ref": "AWS::Region",
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId",
+                    },
+                    ":userpool/",
+                    {
+                      "Fn::ImportValue": "UserMgmt:ExportsOutputReflemueluserpool9CAE2591D8756CD7",
+                    },
+                  ],
+                ],
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "checkuserexistsServiceRoleDefaultPolicyD416E2A9",
+        "Roles": [
+          {
+            "Ref": "checkuserexistsServiceRole1501E617",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
     "chooseproverb54249DA0": {
       "DependsOn": [
         "chooseproverbServiceRoleDefaultPolicy63B799AC",
@@ -404,6 +505,61 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
       "Type": "AWS::ApiGateway::Account",
       "UpdateReplacePolicy": "Retain",
     },
+    "proverbforthedayapiCheckUserExistsKey2AE42370": {
+      "Properties": {
+        "Enabled": true,
+        "Name": "check-user-exists-key",
+        "StageKeys": [
+          {
+            "RestApiId": {
+              "Ref": "proverbforthedayapi6FFFAEB6",
+            },
+            "StageName": {
+              "Ref": "proverbforthedayapiDeploymentStageprodBEAAC809",
+            },
+          },
+        ],
+      },
+      "Type": "AWS::ApiGateway::ApiKey",
+    },
+    "proverbforthedayapiCheckUserExistsUsagePlan4E20988A": {
+      "Properties": {
+        "ApiStages": [
+          {
+            "ApiId": {
+              "Ref": "proverbforthedayapi6FFFAEB6",
+            },
+            "Stage": {
+              "Ref": "proverbforthedayapiDeploymentStageprodBEAAC809",
+            },
+            "Throttle": {},
+          },
+        ],
+        "Description": "Rate limiting for check-user-exists endpoint",
+        "Quota": {
+          "Limit": 10000,
+          "Period": "DAY",
+        },
+        "Throttle": {
+          "BurstLimit": 20,
+          "RateLimit": 10,
+        },
+        "UsagePlanName": "check-user-exists-rate-limit",
+      },
+      "Type": "AWS::ApiGateway::UsagePlan",
+    },
+    "proverbforthedayapiCheckUserExistsUsagePlanUsagePlanKeyResourceTestStackproverbforthedayapiCheckUserExistsKey6C22F790C815F450": {
+      "Properties": {
+        "KeyId": {
+          "Ref": "proverbforthedayapiCheckUserExistsKey2AE42370",
+        },
+        "KeyType": "API_KEY",
+        "UsagePlanId": {
+          "Ref": "proverbforthedayapiCheckUserExistsUsagePlan4E20988A",
+        },
+      },
+      "Type": "AWS::ApiGateway::UsagePlanKey",
+    },
     "proverbforthedayapiCloudWatchRole735AA893": {
       "DeletionPolicy": "Retain",
       "Properties": {
@@ -437,10 +593,13 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
       "Type": "AWS::IAM::Role",
       "UpdateReplacePolicy": "Retain",
     },
-    "proverbforthedayapiDeploymentE2EBB5B40b0a37508d27298019fb2bdfb2872fd0": {
+    "proverbforthedayapiDeploymentE2EBB5B4514e995a728544047554b32c6227a687": {
       "DependsOn": [
         "proverbforthedayapiversionGET216FF9BC",
         "proverbforthedayapiversion64D0829D",
+        "proverbforthedayapiauthcheckuserexistsPOST34090010",
+        "proverbforthedayapiauthcheckuserexists32C8E9CA",
+        "proverbforthedayapiauthBF92B274",
       ],
       "Metadata": {
         "aws:cdk:do-not-refactor": true,
@@ -459,7 +618,7 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
       ],
       "Properties": {
         "DeploymentId": {
-          "Ref": "proverbforthedayapiDeploymentE2EBB5B40b0a37508d27298019fb2bdfb2872fd0",
+          "Ref": "proverbforthedayapiDeploymentE2EBB5B4514e995a728544047554b32c6227a687",
         },
         "MethodSettings": [
           {
@@ -474,6 +633,165 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
         "StageName": "prod",
       },
       "Type": "AWS::ApiGateway::Stage",
+    },
+    "proverbforthedayapiauthBF92B274": {
+      "Properties": {
+        "ParentId": {
+          "Fn::GetAtt": [
+            "proverbforthedayapi6FFFAEB6",
+            "RootResourceId",
+          ],
+        },
+        "PathPart": "auth",
+        "RestApiId": {
+          "Ref": "proverbforthedayapi6FFFAEB6",
+        },
+      },
+      "Type": "AWS::ApiGateway::Resource",
+    },
+    "proverbforthedayapiauthcheckuserexists32C8E9CA": {
+      "Properties": {
+        "ParentId": {
+          "Ref": "proverbforthedayapiauthBF92B274",
+        },
+        "PathPart": "check-user-exists",
+        "RestApiId": {
+          "Ref": "proverbforthedayapi6FFFAEB6",
+        },
+      },
+      "Type": "AWS::ApiGateway::Resource",
+    },
+    "proverbforthedayapiauthcheckuserexistsPOST34090010": {
+      "Properties": {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "POST",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region",
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "checkuserexists488D9724",
+                    "Arn",
+                  ],
+                },
+                "/invocations",
+              ],
+            ],
+          },
+        },
+        "MethodResponses": [
+          {
+            "StatusCode": "200",
+          },
+          {
+            "StatusCode": "400",
+          },
+          {
+            "StatusCode": "429",
+          },
+          {
+            "StatusCode": "500",
+          },
+        ],
+        "ResourceId": {
+          "Ref": "proverbforthedayapiauthcheckuserexists32C8E9CA",
+        },
+        "RestApiId": {
+          "Ref": "proverbforthedayapi6FFFAEB6",
+        },
+      },
+      "Type": "AWS::ApiGateway::Method",
+    },
+    "proverbforthedayapiauthcheckuserexistsPOSTApiPermissionTestStackproverbforthedayapi70C10693POSTauthcheckuserexistsE7BB3B0B": {
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "checkuserexists488D9724",
+            "Arn",
+          ],
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition",
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region",
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId",
+              },
+              ":",
+              {
+                "Ref": "proverbforthedayapi6FFFAEB6",
+              },
+              "/",
+              {
+                "Ref": "proverbforthedayapiDeploymentStageprodBEAAC809",
+              },
+              "/POST/auth/check-user-exists",
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "proverbforthedayapiauthcheckuserexistsPOSTApiPermissionTestTestStackproverbforthedayapi70C10693POSTauthcheckuserexists37AD233C": {
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "checkuserexists488D9724",
+            "Arn",
+          ],
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition",
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region",
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId",
+              },
+              ":",
+              {
+                "Ref": "proverbforthedayapi6FFFAEB6",
+              },
+              "/test-invoke-stage/POST/auth/check-user-exists",
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
     },
     "proverbforthedayapiversion64D0829D": {
       "Properties": {

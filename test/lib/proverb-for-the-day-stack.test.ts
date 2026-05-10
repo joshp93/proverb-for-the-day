@@ -1,18 +1,25 @@
 import * as cdk from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
 import { ProverbForTheDayStack } from "../../lib/proverb-for-the-day-stack";
+import { LemuelUserManagementStack } from "../../lib/lemuel-user-management-stack";
 
 describe("ProverbForTheDayStack", () => {
   it("should match snapshot", () => {
     const app = new cdk.App();
-    const stack = new ProverbForTheDayStack(app, "TestStack");
+    const userManagementStack = new LemuelUserManagementStack(app, "UserMgmt");
+    const stack = new ProverbForTheDayStack(app, "TestStack", {
+      userPoolId: userManagementStack.userPool.userPoolId,
+    });
     const template = Template.fromStack(stack);
     expect(template.toJSON()).toMatchSnapshot();
   });
 
   it("should create a DynamoDB table for proverbs", () => {
     const app = new cdk.App();
-    const stack = new ProverbForTheDayStack(app, "TestStack");
+    const userManagementStack = new LemuelUserManagementStack(app, "UserMgmt");
+    const stack = new ProverbForTheDayStack(app, "TestStack", {
+      userPoolId: userManagementStack.userPool.userPoolId,
+    });
     const template = Template.fromStack(stack);
 
     template.hasResourceProperties("AWS::DynamoDB::Table", {
@@ -25,9 +32,12 @@ describe("ProverbForTheDayStack", () => {
     });
   });
 
-  it("should create Lambda functions for choose-proverb, get-proverb, and load-proverbs", () => {
+  it("should create Lambda functions for choose-proverb, get-proverb, load-proverbs, and check-user-exists", () => {
     const app = new cdk.App();
-    const stack = new ProverbForTheDayStack(app, "TestStack");
+    const userManagementStack = new LemuelUserManagementStack(app, "UserMgmt");
+    const stack = new ProverbForTheDayStack(app, "TestStack", {
+      userPoolId: userManagementStack.userPool.userPoolId,
+    });
     const template = Template.fromStack(stack);
 
     template.hasResourceProperties("AWS::Lambda::Function", {
@@ -44,11 +54,19 @@ describe("ProverbForTheDayStack", () => {
       FunctionName: "load-proverbs",
       Runtime: "nodejs22.x",
     });
+
+    template.hasResourceProperties("AWS::Lambda::Function", {
+      FunctionName: "check-user-exists",
+      Runtime: "nodejs22.x",
+    });
   });
 
-  it("should create a REST API", () => {
+  it("should create a REST API with auth endpoints", () => {
     const app = new cdk.App();
-    const stack = new ProverbForTheDayStack(app, "TestStack");
+    const userManagementStack = new LemuelUserManagementStack(app, "UserMgmt");
+    const stack = new ProverbForTheDayStack(app, "TestStack", {
+      userPoolId: userManagementStack.userPool.userPoolId,
+    });
     const template = Template.fromStack(stack);
 
     template.hasResourceProperties("AWS::ApiGateway::RestApi", {
@@ -58,13 +76,37 @@ describe("ProverbForTheDayStack", () => {
 
   it("should create an EventBridge rule for daily schedule", () => {
     const app = new cdk.App();
-    const stack = new ProverbForTheDayStack(app, "TestStack");
+    const userManagementStack = new LemuelUserManagementStack(app, "UserMgmt");
+    const stack = new ProverbForTheDayStack(app, "TestStack", {
+      userPoolId: userManagementStack.userPool.userPoolId,
+    });
     const template = Template.fromStack(stack);
 
     template.hasResourceProperties("AWS::Events::Rule", {
       Name: "proverb-for-the-day-schedule",
       ScheduleExpression: "cron(0 0 * * ? *)",
       State: "ENABLED",
+    });
+  });
+
+  it("should grant check-user-exists Lambda permission to call AdminGetUser", () => {
+    const app = new cdk.App();
+    const userManagementStack = new LemuelUserManagementStack(app, "UserMgmt");
+    const stack = new ProverbForTheDayStack(app, "TestStack", {
+      userPoolId: userManagementStack.userPool.userPoolId,
+    });
+    const template = Template.fromStack(stack);
+
+    // Verify that an IAM policy for cognito-idp:AdminGetUser is created
+    template.hasResourceProperties("AWS::IAM::Policy", {
+      PolicyDocument: {
+        Statement: [
+          {
+            Effect: "Allow",
+            Action: "cognito-idp:AdminGetUser",
+          },
+        ],
+      },
     });
   });
 });
