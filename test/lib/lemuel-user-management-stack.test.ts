@@ -10,7 +10,7 @@ describe("LemuelUserManagementStack", () => {
     expect(template.toJSON()).toMatchSnapshot();
   });
 
-  it("should create a Cognito User Pool with SRP authentication", () => {
+  it("should create a Cognito User Pool with password authentication", () => {
     const app = new cdk.App();
     const stack = new LemuelUserManagementStack(app, "TestStack");
     const template = Template.fromStack(stack);
@@ -27,7 +27,7 @@ describe("LemuelUserManagementStack", () => {
     });
   });
 
-  it("should create a Cognito User Pool Client with SRP auth flow", () => {
+  it("should create a Cognito User Pool Client with password auth flow", () => {
     const app = new cdk.App();
     const stack = new LemuelUserManagementStack(app, "TestStack");
     const template = Template.fromStack(stack);
@@ -36,10 +36,10 @@ describe("LemuelUserManagementStack", () => {
       GenerateSecret: false,
     });
 
-    // Verify SRP auth flow is included
+    // Verify password auth flow is included
     const match = template.findResources("AWS::Cognito::UserPoolClient");
     const clientProps = Object.values(match)[0].Properties;
-    expect(clientProps.ExplicitAuthFlows).toContain("ALLOW_USER_SRP_AUTH");
+    expect(clientProps.ExplicitAuthFlows).toContain("ALLOW_USER_PASSWORD_AUTH");
   });
 
   it("should create a Cognito User Pool Domain", () => {

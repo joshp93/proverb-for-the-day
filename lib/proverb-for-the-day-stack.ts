@@ -5,6 +5,7 @@ import * as events from "aws-cdk-lib/aws-events";
 import * as targets from "aws-cdk-lib/aws-events-targets";
 import * as lambda from "aws-cdk-lib/aws-lambda";
 import * as iam from "aws-cdk-lib/aws-iam";
+import * as secretsmanager from "aws-cdk-lib/aws-secretsmanager";
 import { Construct } from "constructs";
 
 interface ProverbForTheDayStackProps extends cdk.StackProps {
@@ -22,6 +23,38 @@ export class ProverbForTheDayStack extends cdk.Stack {
       removalPolicy: cdk.RemovalPolicy.DESTROY,
       billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
     });
+
+    table.addGlobalSecondaryIndex({
+      indexName: "gsi1",
+      partitionKey: { name: "gsi1pk", type: dynamodb.AttributeType.STRING },
+      sortKey: { name: "sk", type: dynamodb.AttributeType.STRING },
+    });
+
+    const apiBibleSecret = new secretsmanager.Secret(
+      this,
+      "api-bible-secret",
+      {
+        secretName: "api-bible-credentials",
+        removalPolicy: cdk.RemovalPolicy.DESTROY,
+      }
+    );
+
+    const fetchProverbsForVersion = new lambda.Function(
+      this,
+      "fetch-proverbs-for-version",
+      {
+        functionName: "fetch-proverbs-for-version",
+        runtime: lambda.Runtime.NODEJS_22_X,
+        handler: "index.handler",
+        code: lambda.Code.fromAsset("dist/fetch-proverbs-for-version"),
+        environment: {
+          API_BIBLE_SECRET_NAME: apiBibleSecret.secretName,
+        },
+        timeout: cdk.Duration.minutes(1),
+      }
+    );
+
+    apiBibleSecret.grantRead(fetchProverbsForVersion);
 
     const chooseProverb = new lambda.Function(this, "choose-proverb", {
       functionName: "choose-proverb",

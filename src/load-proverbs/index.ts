@@ -6,7 +6,11 @@ import {
   PutCommand,
 } from "@aws-sdk/lib-dynamodb";
 import { LoadProverbsEvent, LoadProverbsEventSchema } from "./eventSchemas";
-import { ProverbEntitySchema, RefsEntity } from "./proverbStoreSchemas";
+import {
+  ProverbEntitySchema,
+  RefsEntity,
+  VersionEntitySchema,
+} from "./proverbStoreSchemas";
 
 export const handler = async (event: LoadProverbsEvent): Promise<void> => {
   console.debug("Event:", JSON.stringify(event));
@@ -25,6 +29,7 @@ export const handler = async (event: LoadProverbsEvent): Promise<void> => {
       pk,
       sk,
       proverb,
+      version: event.version,
     });
     return {
       PutRequest: {
@@ -52,7 +57,7 @@ export const handler = async (event: LoadProverbsEvent): Promise<void> => {
         pk: "refs",
         sk: "refs",
       },
-    })
+    }),
   );
 
   if (!refsResult.Item) {
@@ -60,19 +65,63 @@ export const handler = async (event: LoadProverbsEvent): Promise<void> => {
       pk: "refs",
       sk: "refs",
       allRefs: event.proverbs.map((p) =>
-        p.ref.replace(`${event.version}#`, "").replace(/\s+/g, "")
+        p.ref.replace(`${event.version}#`, "").replace(/\s+/g, ""),
       ),
       usedRefs: [],
     };
 
     console.debug("Creating refs item", JSON.stringify(refs));
-    client.send(
+    await client.send(
       new PutCommand({
         TableName: tableName,
         Item: refs,
-      })
+      }),
     );
   } else {
     console.debug("Refs item already exists, skipping creation.");
+  }
+
+  const versionLower = event.version.toLowerCase();
+
+  const versionResult = await client.send(
+    new GetCommand({
+      TableName: tableName,
+      Key: {
+        pk: "versions",
+        sk: "versions",
+      },
+    }),
+  );
+
+  if (!versionResult.Item) {
+    const versionEntity = VersionEntitySchema.parse({
+      versions: [versionLower],
+    });
+    console.debug("Creating versions item", JSON.stringify(versionEntity));
+    await client.send(
+      new PutCommand({
+        TableName: tableName,
+        Item: versionEntity,
+      }),
+    );
+  } else {
+    const existingVersions = (versionResult.Item as { versions?: string[] }).versions || [];
+    if (!existingVersions.includes(versionLower)) {
+      const updatedVersions = [...existingVersions, versionLower];
+      const updatedEntity = VersionEntitySchema.parse({
+        pk: "versions",
+        sk: "versions",
+        versions: updatedVersions,
+      });
+      console.debug("Updating versions item", JSON.stringify(updatedEntity));
+      await client.send(
+        new PutCommand({
+          TableName: tableName,
+          Item: updatedEntity,
+        }),
+      );
+    } else {
+      console.debug("Version already exists in versions list, skipping update.");
+    }
   }
 };

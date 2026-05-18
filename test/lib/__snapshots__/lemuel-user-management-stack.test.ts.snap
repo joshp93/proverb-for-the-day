@@ -96,7 +96,7 @@ exports[`LemuelUserManagementStack should match snapshot 1`] = `
           "https://example.com",
         ],
         "ExplicitAuthFlows": [
-          "ALLOW_USER_SRP_AUTH",
+          "ALLOW_USER_PASSWORD_AUTH",
           "ALLOW_REFRESH_TOKEN_AUTH",
         ],
         "GenerateSecret": false,

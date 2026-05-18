@@ -42,7 +42,7 @@ export class LemuelUserManagementStack extends cdk.Stack {
       {
         userPool: this.userPool,
         authFlows: {
-          userSrp: true,
+          userPassword: true,
         },
         generateSecret: false,
       },

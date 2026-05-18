@@ -38,6 +38,15 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
     },
   },
   "Resources": {
+    "apibiblesecret0F5BE30F": {
+      "DeletionPolicy": "Delete",
+      "Properties": {
+        "GenerateSecretString": {},
+        "Name": "api-bible-credentials",
+      },
+      "Type": "AWS::SecretsManager::Secret",
+      "UpdateReplacePolicy": "Delete",
+    },
     "checkuserexists488D9724": {
       "DependsOn": [
         "checkuserexistsServiceRoleDefaultPolicyD416E2A9",
@@ -149,7 +158,7 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "b511f45f5454140a5a97245f71eb49ff79a3ef4c8d3e8e1c0019ee049b483921.zip",
+          "S3Key": "84703230122950e35edaea93ceffca3614ab8635c46c29bee1ddca239e6ed5ae.zip",
         },
         "Environment": {
           "Variables": {
@@ -195,6 +204,20 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
                     "Arn",
                   ],
                 },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "proverbsstore7682A597",
+                          "Arn",
+                        ],
+                      },
+                      "/index/*",
+                    ],
+                  ],
+                },
               ],
             },
             {
@@ -208,6 +231,20 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
                   "Fn::GetAtt": [
                     "proverbsstore7682A597",
                     "Arn",
+                  ],
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "proverbsstore7682A597",
+                          "Arn",
+                        ],
+                      },
+                      "/index/*",
+                    ],
                   ],
                 },
               ],
@@ -255,6 +292,168 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
       },
       "Type": "AWS::IAM::Role",
     },
+    "fetchproverbsforversion4C784619": {
+      "DependsOn": [
+        "fetchproverbsforversionServiceRoleDefaultPolicyDEC1A29A",
+        "fetchproverbsforversionServiceRole16042134",
+      ],
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
+          },
+          "S3Key": "07eb2ce9ef6921597bc6ccd83aad4db872427228a9aa0275aef458040e2170a4.zip",
+        },
+        "Environment": {
+          "Variables": {
+            "API_BIBLE_SECRET_NAME": {
+              "Fn::Join": [
+                "-",
+                [
+                  {
+                    "Fn::Select": [
+                      0,
+                      {
+                        "Fn::Split": [
+                          "-",
+                          {
+                            "Fn::Select": [
+                              6,
+                              {
+                                "Fn::Split": [
+                                  ":",
+                                  {
+                                    "Ref": "apibiblesecret0F5BE30F",
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    "Fn::Select": [
+                      1,
+                      {
+                        "Fn::Split": [
+                          "-",
+                          {
+                            "Fn::Select": [
+                              6,
+                              {
+                                "Fn::Split": [
+                                  ":",
+                                  {
+                                    "Ref": "apibiblesecret0F5BE30F",
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    "Fn::Select": [
+                      2,
+                      {
+                        "Fn::Split": [
+                          "-",
+                          {
+                            "Fn::Select": [
+                              6,
+                              {
+                                "Fn::Split": [
+                                  ":",
+                                  {
+                                    "Ref": "apibiblesecret0F5BE30F",
+                                  },
+                                ],
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              ],
+            },
+          },
+        },
+        "FunctionName": "fetch-proverbs-for-version",
+        "Handler": "index.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "fetchproverbsforversionServiceRole16042134",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs22.x",
+        "Timeout": 60,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "fetchproverbsforversionServiceRole16042134": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "fetchproverbsforversionServiceRoleDefaultPolicyDEC1A29A": {
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "secretsmanager:GetSecretValue",
+                "secretsmanager:DescribeSecret",
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Ref": "apibiblesecret0F5BE30F",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "fetchproverbsforversionServiceRoleDefaultPolicyDEC1A29A",
+        "Roles": [
+          {
+            "Ref": "fetchproverbsforversionServiceRole16042134",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
     "getproverb58091E74": {
       "DependsOn": [
         "getproverbServiceRoleDefaultPolicy57741BF4",
@@ -265,7 +464,7 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "104b2edf30d0c71d3d44ccac89038c53682c13d1af75bc1a94fff00a1932cc82.zip",
+          "S3Key": "79630726cd013a271534c32d3a4280534de6baf0bfd6583f9d982b680d8535fe.zip",
         },
         "Environment": {
           "Variables": {
@@ -338,6 +537,20 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
                     "Arn",
                   ],
                 },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "proverbsstore7682A597",
+                          "Arn",
+                        ],
+                      },
+                      "/index/*",
+                    ],
+                  ],
+                },
               ],
             },
             {
@@ -351,6 +564,20 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
                   "Fn::GetAtt": [
                     "proverbsstore7682A597",
                     "Arn",
+                  ],
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "proverbsstore7682A597",
+                          "Arn",
+                        ],
+                      },
+                      "/index/*",
+                    ],
                   ],
                 },
               ],
@@ -377,7 +604,7 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "d55dd1a61d5d551cedf4586affc95b0c50d219215cd350f256977558c61a68ec.zip",
+          "S3Key": "fd2aecc9a1ad1d49da59a1468954a15dc8b58ea3731879648ca8a0f8e633dfe6.zip",
         },
         "Environment": {
           "Variables": {
@@ -454,6 +681,20 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
                     "Arn",
                   ],
                 },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "proverbsstore7682A597",
+                          "Arn",
+                        ],
+                      },
+                      "/index/*",
+                    ],
+                  ],
+                },
               ],
             },
             {
@@ -467,6 +708,20 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
                   "Fn::GetAtt": [
                     "proverbsstore7682A597",
                     "Arn",
+                  ],
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "proverbsstore7682A597",
+                          "Arn",
+                        ],
+                      },
+                      "/index/*",
+                    ],
                   ],
                 },
               ],
@@ -976,8 +1231,30 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
             "AttributeName": "sk",
             "AttributeType": "S",
           },
+          {
+            "AttributeName": "gsi1pk",
+            "AttributeType": "S",
+          },
         ],
         "BillingMode": "PAY_PER_REQUEST",
+        "GlobalSecondaryIndexes": [
+          {
+            "IndexName": "gsi1",
+            "KeySchema": [
+              {
+                "AttributeName": "gsi1pk",
+                "KeyType": "HASH",
+              },
+              {
+                "AttributeName": "sk",
+                "KeyType": "RANGE",
+              },
+            ],
+            "Projection": {
+              "ProjectionType": "ALL",
+            },
+          },
+        ],
         "KeySchema": [
           {
             "AttributeName": "pk",
