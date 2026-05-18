@@ -206,6 +206,7 @@ export const handler = async (
   const output: Output = {
     version,
     proverbs,
+    ...(parsed.citation && { citation: parsed.citation }),
   };
 
   console.log(`Fetch complete - total proverbs: ${proverbs.length}`);

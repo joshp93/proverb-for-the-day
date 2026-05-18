@@ -7,7 +7,7 @@ import {
 import {
   ProverbForTheDayEntitySchema,
   RefsEntitySchema,
-} from "./proverbStoreSchemas";
+} from "../models/proverbStoreSchemas";
 
 export const handler = async (): Promise<void> => {
   const client = DynamoDBDocumentClient.from(new DynamoDBClient({}));
@@ -19,7 +19,7 @@ export const handler = async (): Promise<void> => {
         pk: "refs",
         sk: "refs",
       },
-    })
+    }),
   );
   const refs = RefsEntitySchema.parse(refsResult.Item);
 
@@ -39,13 +39,13 @@ export const handler = async (): Promise<void> => {
         sk: "proverb-for-the-day",
         ref: randomRef,
       }),
-    })
+    }),
   );
   const putRefsPromise = client.send(
     new PutCommand({
       TableName: tableName,
       Item: refs,
-    })
+    }),
   );
   await Promise.all([putProverbForTheDayPromise, putRefsPromise]);
 };

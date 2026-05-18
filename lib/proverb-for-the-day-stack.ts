@@ -3,8 +3,8 @@ import * as apigateway from "aws-cdk-lib/aws-apigateway";
 import * as dynamodb from "aws-cdk-lib/aws-dynamodb";
 import * as events from "aws-cdk-lib/aws-events";
 import * as targets from "aws-cdk-lib/aws-events-targets";
-import * as lambda from "aws-cdk-lib/aws-lambda";
 import * as iam from "aws-cdk-lib/aws-iam";
+import * as lambda from "aws-cdk-lib/aws-lambda";
 import * as secretsmanager from "aws-cdk-lib/aws-secretsmanager";
 import { Construct } from "constructs";
 
@@ -25,19 +25,15 @@ export class ProverbForTheDayStack extends cdk.Stack {
     });
 
     table.addGlobalSecondaryIndex({
-      indexName: "gsi1",
-      partitionKey: { name: "gsi1pk", type: dynamodb.AttributeType.STRING },
+      indexName: "version-index",
+      partitionKey: { name: "version", type: dynamodb.AttributeType.STRING },
       sortKey: { name: "sk", type: dynamodb.AttributeType.STRING },
     });
 
-    const apiBibleSecret = new secretsmanager.Secret(
-      this,
-      "api-bible-secret",
-      {
-        secretName: "api-bible-credentials",
-        removalPolicy: cdk.RemovalPolicy.DESTROY,
-      }
-    );
+    const apiBibleSecret = new secretsmanager.Secret(this, "api-bible-secret", {
+      secretName: "api-bible-credentials",
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+    });
 
     const fetchProverbsForVersion = new lambda.Function(
       this,
@@ -51,7 +47,7 @@ export class ProverbForTheDayStack extends cdk.Stack {
           API_BIBLE_SECRET_NAME: apiBibleSecret.secretName,
         },
         timeout: cdk.Duration.minutes(1),
-      }
+      },
     );
 
     apiBibleSecret.grantRead(fetchProverbsForVersion);
@@ -94,7 +90,7 @@ export class ProverbForTheDayStack extends cdk.Stack {
         resources: [
           `arn:aws:cognito-idp:${this.region}:${this.account}:userpool/${props.userPoolId}`,
         ],
-      })
+      }),
     );
 
     const api = new apigateway.RestApi(this, "proverb-for-the-day-api", {
@@ -112,7 +108,8 @@ export class ProverbForTheDayStack extends cdk.Stack {
 
     // Add auth endpoints with rate limiting
     const authResource = api.root.addResource("auth");
-    const checkUserExistsResource = authResource.addResource("check-user-exists");
+    const checkUserExistsResource =
+      authResource.addResource("check-user-exists");
 
     checkUserExistsResource.addMethod(
       "POST",
@@ -133,7 +130,7 @@ export class ProverbForTheDayStack extends cdk.Stack {
             statusCode: "500",
           },
         ],
-      }
+      },
     );
 
     // Create usage plan with rate limiting to prevent user enumeration

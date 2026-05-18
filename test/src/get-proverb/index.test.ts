@@ -39,12 +39,23 @@ describe("get-proverbs handler", () => {
         Item: {
           pk: "kjv#Proverbs10:1",
           sk: "Proverbs10:1",
+          version: "kjv",
           proverb: {
             ref: "Proverbs 10:1",
             proverb: "A wise son maketh a glad father...",
           },
         },
       });
+
+    ddbMock
+      .on(GetCommand, {
+        TableName: process.env.TABLE_NAME,
+        Key: {
+          pk: "citation",
+          sk: "kjv",
+        },
+      })
+      .resolves({});
 
     const event = {
       pathParameters: { version: "kjv" },

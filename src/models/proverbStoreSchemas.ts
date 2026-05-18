@@ -20,6 +20,7 @@ export const ProverbEntitySchema = z.object({
   pk: z.string(),
   sk: z.string(),
   proverb: ProverbSchema,
+  version: z.string().lowercase(),
 });
 
 export type ProverbEntity = z.infer<typeof ProverbEntitySchema>;
@@ -33,3 +34,19 @@ export const ProverbForTheDayEntitySchema = z.object({
 export type ProverbForTheDayEntity = z.infer<
   typeof ProverbForTheDayEntitySchema
 >;
+
+export const VersionEntitySchema = z.object({
+  pk: z.string().default("versions"),
+  sk: z.string().default("versions"),
+  versions: z.array(z.string()),
+});
+
+export type VersionEntity = z.infer<typeof VersionEntitySchema>;
+
+export const VersionCitationSchema = z.object({
+  pk: z.string(),
+  sk: z.string(),
+  citation: z.string(),
+});
+
+export type VersionCitation = z.infer<typeof VersionCitationSchema>;

@@ -158,7 +158,7 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "84703230122950e35edaea93ceffca3614ab8635c46c29bee1ddca239e6ed5ae.zip",
+          "S3Key": "376ed67712caae62a29115115039e7739f703686805587861ac9d01b7ab39fa1.zip",
         },
         "Environment": {
           "Variables": {
@@ -302,7 +302,7 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "07eb2ce9ef6921597bc6ccd83aad4db872427228a9aa0275aef458040e2170a4.zip",
+          "S3Key": "c355eb339bb6c39da5b2ecb520ebc873819d8d19ffffe3bc3c3aa2ba961bbc35.zip",
         },
         "Environment": {
           "Variables": {
@@ -464,7 +464,7 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "79630726cd013a271534c32d3a4280534de6baf0bfd6583f9d982b680d8535fe.zip",
+          "S3Key": "e4d3e9e2915b8fcaeb96a9f4a420877eb3c11e77d4683777a78a223bb951b08b.zip",
         },
         "Environment": {
           "Variables": {
@@ -604,7 +604,7 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "fd2aecc9a1ad1d49da59a1468954a15dc8b58ea3731879648ca8a0f8e633dfe6.zip",
+          "S3Key": "342798072d7b89a134e0e0f6c0a616611062844dddca04bb347424652b272055.zip",
         },
         "Environment": {
           "Variables": {
@@ -1232,7 +1232,7 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
             "AttributeType": "S",
           },
           {
-            "AttributeName": "gsi1pk",
+            "AttributeName": "version",
             "AttributeType": "S",
           },
         ],
@@ -1242,7 +1242,7 @@ exports[`ProverbForTheDayStack should match snapshot 1`] = `
             "IndexName": "gsi1",
             "KeySchema": [
               {
-                "AttributeName": "gsi1pk",
+                "AttributeName": "version",
                 "KeyType": "HASH",
               },
               {

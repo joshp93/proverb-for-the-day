@@ -5,12 +5,13 @@ import {
   GetCommand,
   PutCommand,
 } from "@aws-sdk/lib-dynamodb";
-import { LoadProverbsEvent, LoadProverbsEventSchema } from "./eventSchemas";
 import {
   ProverbEntitySchema,
   RefsEntity,
+  VersionCitationSchema,
   VersionEntitySchema,
-} from "./proverbStoreSchemas";
+} from "../models/proverbStoreSchemas";
+import { LoadProverbsEvent, LoadProverbsEventSchema } from "./eventSchemas";
 
 export const handler = async (event: LoadProverbsEvent): Promise<void> => {
   console.debug("Event:", JSON.stringify(event));
@@ -81,8 +82,6 @@ export const handler = async (event: LoadProverbsEvent): Promise<void> => {
     console.debug("Refs item already exists, skipping creation.");
   }
 
-  const versionLower = event.version.toLowerCase();
-
   const versionResult = await client.send(
     new GetCommand({
       TableName: tableName,
@@ -95,7 +94,7 @@ export const handler = async (event: LoadProverbsEvent): Promise<void> => {
 
   if (!versionResult.Item) {
     const versionEntity = VersionEntitySchema.parse({
-      versions: [versionLower],
+      versions: [event.version],
     });
     console.debug("Creating versions item", JSON.stringify(versionEntity));
     await client.send(
@@ -105,9 +104,10 @@ export const handler = async (event: LoadProverbsEvent): Promise<void> => {
       }),
     );
   } else {
-    const existingVersions = (versionResult.Item as { versions?: string[] }).versions || [];
-    if (!existingVersions.includes(versionLower)) {
-      const updatedVersions = [...existingVersions, versionLower];
+    const existingVersions =
+      (versionResult.Item as { versions?: string[] }).versions || [];
+    if (!existingVersions.includes(event.version)) {
+      const updatedVersions = [...existingVersions, event.version];
       const updatedEntity = VersionEntitySchema.parse({
         pk: "versions",
         sk: "versions",
@@ -121,7 +121,27 @@ export const handler = async (event: LoadProverbsEvent): Promise<void> => {
         }),
       );
     } else {
-      console.debug("Version already exists in versions list, skipping update.");
+      console.debug(
+        "Version already exists in versions list, skipping update.",
+      );
     }
+  }
+
+  if (event.citation) {
+    const citationEntity = VersionCitationSchema.parse({
+      pk: "citation",
+      sk: event.version,
+      citation: event.citation,
+    });
+    console.debug(
+      "Creating/updating citation item",
+      JSON.stringify(citationEntity),
+    );
+    await client.send(
+      new PutCommand({
+        TableName: tableName,
+        Item: citationEntity,
+      }),
+    );
   }
 };
